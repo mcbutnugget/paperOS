@@ -10,8 +10,8 @@ function load(){
 var data = [""];
 function save(){
 data=document.getElementById("code").innerHTML;
-localStorage.setItem(localStorage.getItem("location"),data);
-
+writeFile(computator,localStorage.getItem("location"),data);
+localStorage.setItem("computator",JSON.stringify(computator));
 }
 
 $(document).keydown(function(e) {
