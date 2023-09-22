@@ -1,8 +1,5 @@
 var textarea = document.getElementById('code');
 
-function save(){
-
-}
 
 function load(){
     var bootloader = localStorage.getItem("computator");
