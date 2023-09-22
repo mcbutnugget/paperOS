@@ -12,7 +12,7 @@ function load(){
 
 var data = [""];
 function save(){
-data=document.getElementById("code").value;
+data=document.getElementById("code").innerHTML;
 writeFile(computator,localStorage.getItem("location"),data);
 
 }

@@ -8,7 +8,7 @@ function openStickynote(data){
     <div id="controlButtons">
     <button id="saveFile" style="width:33.3%; height:1.5%;" onClick = "save();">save</button><button id="saveAsFile" style="width:33.3%; height:1.5%;">save as</button><button id="openFile" style="width:33.3%; height:1.5%;">open</button>
     </div>
-    <textarea id="code" value="${data}"></textarea>
+    <textarea id="code">${data}</textarea>
 </div>
 `,"../icons/logos/stickynoteIcon.png");
 }
