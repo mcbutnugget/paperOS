@@ -155,7 +155,7 @@ write[file name] : <i>data</i> - writes to the contents of a file, should be use
             $('#shellData').append(`<h4 class = 'user_disp'>opening...</h4>`);
             localStorage.setItem("location",folderName+"/"+newCMD.split(" ").pop());
             localStorage.setItem(folderName+"/"+newCMD.split(" ").pop(),PathToFile(computator,folderName+"/"+newCMD.split(" ").pop()));
-            openStickynote();
+            openStickynote(localStorage.getItem(localStorage.getItem("location")));
           }else{
             $('#shellData').append(`<h4 class = 'error'>there is nothing there or that is a folder,\n\nif you want to go into a folder, type 'goto 'foldername</h4>`);
           }
@@ -188,7 +188,7 @@ write[file name] : <i>data</i> - writes to the contents of a file, should be use
             }
             await POSH.pause(1);
           }
-        }else if(newCMD.startsWith("seeIn ")){
+        }else if(newCMD.startsWith("seeIn ")||newCMD.startsWith("cat ")){
 
           say(PathToFile(computator,folderName+"/"+newCMD.split(" ").pop()));
          
