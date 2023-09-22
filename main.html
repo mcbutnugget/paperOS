@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html id="html">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>paperOS</title>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////APz8/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIiIiIgAAAAAAAAAAAAAAIiIiIgAAAAAiIiIiAAAAACAgACIAAAAAICIgIgAAAAAgIAAiAAAAACAgIiIAAAAAICAAIgAAAAAgIiIiAAAAACAQACIAAAAAIBAQIgAAAAAgEAAiAAAAICIiIiIAAAAAAAAAAAAADAAwAAwAMAAMADAADADwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAAA8AAAAPAAAADwAA" rel="icon" type="image/x-icon" />
+  </head>
+  <body id="body" onload="load()">
+  <div id="window">
+  <div id="windowheader">settings<button id="exit" onclick="location.href='javascript:close('window');'">X</button><button onclick="location.href='javascript:fulscreen();'">□</button></div>
+   <br>
+    <br>
+    <button onclick="newWindow('bg')">
+     background
+    </button>
+    </div>
+    <div id="bg">
+  <div id="bgheader">background switcher<button id="bgexit" onclick="location.href='javascript:close('bg');'">X</button><button onclick="location.href='javascript:fullscreenbg();'">□</button></div>
+   <br>
+    <br>
+      
+      <button onclick="background('window');background('file');background('notepad');background('bg');">
+         <img id="current" src="https://cdn.glitch.global/bcd81597-8b94-49e2-aee2-81079e0ec671/paper(1).png?v=1670306442348"/>
+      </button>
+      
+      
+</div>
+    <div id="notepad">
+  <div id="notepadheader">notepad<button id="notepadexit" onclick="close('notepad')">X</button><button onclick="location.href='javascript:notepadfulscreen();'">□</button></div>
+     <br>
+      <br>
+       <button>
+         save as
+       </button>
+       <button>
+         save
+       </button>
+      <div id="textContain">
+       
+       <p contenteditable="true" id="text">
+      
+      </p>
+      </div>
+      
+</div>
+
+    <div id="file">
+  <div id="fileheader">files<button id="fileexit" onclick="location.href='javascript:close('file');'">X</button><button onclick="location.href='javascript:filefulscreen();'">□</button></div>
+     <br>
+      <br>
+       <button>
+         new
+       </button>
+      <br>
+      <br>
+      <br>
+       <button>
+         my Stack
+       </button>
+      <br>
+      <br>
+      <br>
+      <br>
+      <form>
+        <input type="text" placeholder="search..." id="searchFiles" autocomplete="off"/>
+        <button>
+        🔍
+      </button>
+      </form>
+      
+      </div>
+<script src="movable.js"></script>
+
+    <div id="menu">
+
+      <br>
+      <button id="settings" onclick="newWindow('window')">
+        settings
+      </button>
+      <br>
+      <button id="notepadOpen" onclick="newWindow('notepad')">
+        notepad
+      </button>
+      <br>
+      <button id="fill" onclick="newWindow('file')">
+        myFiles
+      </button>
+      <br><br><br><br><br><br>
+      
+      <button id="quit" onclick="shut()">
+        sign out
+      </button>
+      
+    </div>
+    <div id="rclickmenu">
+      <button>
+        new...
+      </button>
+      <button>
+        open console
+      </button>
+      
+    </div>
+  <div id="launchbar">
+  
+    <button id="launch" onclick="menu()">
+    <img id="launch-ico" src="https://cdn.glitch.global/bcd81597-8b94-49e2-aee2-81079e0ec671/paper%20OS%20logo.png?v=1670134307089"/>
+    </button>
+    </div>
+  
+
+  </body>
+</html>

@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
- <head>
-    <title>POSH</title>
- </head>
- <body>
-    <h1>hello</h1>
- </body>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>paper OS - login</title>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////APz8/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIiIiIgAAAAAAAAAAAAAAIiIiIgAAAAAiIiIiAAAAACAgACIAAAAAICIgIgAAAAAgIAAiAAAAACAgIiIAAAAAICAAIgAAAAAgIiIiAAAAACAQACIAAAAAIBAQIgAAAAAgEAAiAAAAICIiIiIAAAAAAAAAAAAADAAwAAwAMAAMADAADADwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAAA8AAAAPAAAADwAA" rel="icon" type="image/x-icon" />
+  </head>
+  <body onload="load()">
+    <h1>
+      <img
+        src="https://cdn.glitch.global/bcd81597-8b94-49e2-aee2-81079e0ec671/paper%20OS%20logo.png?v=1670134307089"
+        alt="paperOS_Logo"
+        id="paperos_log"
+      />
+      paperOS login
+    </h1>
+    <h1 id="WC">welcome</h1>
+    <form>
+      <label for="pass" id="label">password:</label>
+      <input autocomplete="off" id="pass" type="password" /><br />
+      <input type="button" id="sub" onclick="passs()" value="enter" />
+      <p id="error"></p>
+    </form>
+  </body>
 </html>
