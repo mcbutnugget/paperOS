@@ -10,7 +10,7 @@ function load(){
 var data = [""];
 function save(){
 data=document.getElementById("code").innerHTML;
-writeFile(computator,localStorage.getItem("location"),data);
+localStorage.setItem(localStorage.getItem("location"),data);
 
 }
 
