@@ -3,8 +3,7 @@ var scrollOpen = false;
 function openStickynote(data){
     createWindow("stickynote", `
     <link rel="stylesheet" href="../styles/stickynote.css">
-    <script src="POSH functions.js"></script>
-    <script src="stickynote.js" defer></script>
+    <script src="../js/stickynote.js" defer></script>
 <div id="body2">
     <div id="controlButtons">
     <button id="saveFile" style="width:33.3%; height:1.5%;" onClick = "save()">save</button><button id="saveAsFile" style="width:33.3%; height:1.5%;">save as</button><button id="openFile" style="width:33.3%; height:1.5%;">open</button>
