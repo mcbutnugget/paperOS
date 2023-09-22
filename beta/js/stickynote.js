@@ -9,9 +9,10 @@ function load(){
 
 var data = [""];
 function save(){
-data=document.getElementById("code").innerHTML;
+data=document.getElementById("code").value;
 writeFile(computator,localStorage.getItem("location"),data);
 localStorage.setItem("computator",JSON.stringify(computator));
+console.log()
 }
 
 $(document).keydown(function(e) {
