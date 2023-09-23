@@ -632,7 +632,9 @@ if(running==true){
   document.querySelector("tag").innerHTML="";
 }
 
-
+/*document.addEventListener("click",function(event){
+  if(event.button=="1")
+});*/
 
 
 

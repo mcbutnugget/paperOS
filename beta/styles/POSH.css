@@ -1,41 +1,10 @@
-h1{
-  color:white;
-  font-family: "Press Start 2P", sans-serif;
-  text-align: center;
-  
-}
+
 .warn{
+  font-family: "Press Start 2P", sans-serif;
   color:rgb(255, 145, 0);
 }
 
-h2{
-  color:hsl(0, 100%, 50%);
-  color:white;
-  font-family: "Press Start 2P", sans-serif;
-  text-align: center;
 
-}
-
-h3{
-  color:rgb(0, 247, 255);
-  font-family: "Press Start 2P", sans-serif;
-  text-align: center;
-  
-  
-}
-h3:hover{
-  background-color: blue;
-  color:cyan;
-
-}
-h5{
-position:fixed;
-right:0px;
-top:0px;
-font-size:10px;
-color:rgb(0, 255, 0);
-font-family: "Press Start 2P", sans-serif;
-}
 a{
 text-decoration: none;
 }
@@ -61,10 +30,6 @@ text-decoration: none;
 }
 ::-webkit-scrollbar {
   width: 0px;
-}
-h4{
-  color:red;
-  font-family: "Press Start 2P", sans-serif;
 }
 
 #bodyNumberTwo{
@@ -92,9 +57,11 @@ font-size: 1em;
 font-weight: bold;
 }
 #name{
+  font-family: "Press Start 2P", sans-serif;
   color:rgb(0, 255, 0);
 }
 .error{
+  font-family: "Press Start 2P", sans-serif;
   color:red;
 }
 .user_disp{
