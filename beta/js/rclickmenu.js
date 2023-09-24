@@ -7,30 +7,30 @@ document.addEventListener("contextmenu", function (e) {
     var mouseY = e.pageY;
 
     if (menuVisible) {
-       
+        // Hide the menu with a fade-out effect
         menu.style.transition = "0.5s";
+        menu.style.opacity = "0";
 
         setTimeout(function () {
-          
-            menu.style.transition = "0s"; 
+            // After the fade-out animation, move the menu to the mouse position
+            menu.style.transition = "0s"; // Disable transition for instant teleportation
             menu.style.left = mouseX + "px";
             menu.style.top = mouseY + "px";
-            menu.style.backgroundColor="rgba(90, 90, 90, 0)";
+            menu.style.backgroundColor = "rgba(90, 90, 90, 0)"; // Set background to transparent
+            menu.style.opacity = "1"; // Make it fully visible again
+            menu.style.display = "block"; // Ensure it's displayed
 
-  
-
-        }, 500); 
+        }, 500); // Adjust the timeout duration to match the fade-out duration
 
         menuVisible = false;
     } else {
-         
-        menu.style.transition = "0s"; 
+        // Teleport the menu to the mouse position and make it visible
+        menu.style.transition = "0s"; // Disable transition for instant teleportation
         menu.style.left = mouseX + "px";
         menu.style.top = mouseY + "px";
-        menu.style.backgroundColor="rgba(90, 90, 90, 0.7)";
-        menu.style.display = "block"; 
-
-        
+        menu.style.backgroundColor = "rgba(90, 90, 90, 0.7)"; // Set background to semi-transparent
+        menu.style.opacity = "1"; // Make it fully visible
+        menu.style.display = "block"; // Ensure it's displayed
 
         menuVisible = true;
     }
@@ -39,7 +39,15 @@ document.addEventListener("contextmenu", function (e) {
 // Handle left-click to hide the menu
 document.addEventListener("click", function (e) {
     if (e.button === 0 && menuVisible) {
-        menu.style.display = "none";
+        menu.style.transition = "0.5s"; // Apply a fade-out effect
+        menu.style.opacity = "0";
+
+        setTimeout(function () {
+            // After the fade-out animation, hide the menu
+            menu.style.transition = "0s"; // Disable transition for instant teleportation
+            menu.style.display = "none";
+        }, 500); // Adjust the timeout duration to match the fade-out duration
+
         menuVisible = false;
     }
 });
