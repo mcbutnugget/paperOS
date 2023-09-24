@@ -16,7 +16,7 @@ document.addEventListener("contextmenu", function (e) {
             menu.style.transition = "0s"; 
             menu.style.left = mouseX + "px";
             menu.style.top = mouseY + "px";
-            menu.style.opacity = "1"; 
+            menu.style.backgroundColor="rgba(90, 90, 90, 0)";
 
   
 
@@ -26,7 +26,7 @@ document.addEventListener("contextmenu", function (e) {
         menu.style.transition = "0s"; 
         menu.style.left = mouseX + "px";
         menu.style.top = mouseY + "px";
-        menu.style.opacity = "1"; 
+        menu.style.backgroundColor="rgba(90, 90, 90, 0.7)";
         menu.style.display = "block"; 
 
         
