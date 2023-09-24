@@ -8,7 +8,7 @@ document.addEventListener("contextmenu",async function(e){
         menu.style.backdropFilter= "blur(0px)";
         await POSH.pause(500);
         menu.style.transition = "0s";
-        await POSH.pause(0);
+        await POSH.pause(1);
         menu.style.display = "none";
         menu.style.left = e.pageX+"px";
         menu.style.top = e.pageY+"px";
