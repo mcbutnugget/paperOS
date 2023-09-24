@@ -275,3 +275,28 @@ img{
     width:7vw;
     height:7vw;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#rclickmenu{
+    display:none;
+    position:absolute;
+    height:20vw;
+    width:10vw;
+    background-color:rgba(20, 20, 20, 0);
+    transition: 0.5s;
+    backdrop-filter: blur(6px);
+}
