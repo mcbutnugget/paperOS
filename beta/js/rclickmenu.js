@@ -1,36 +1,44 @@
 var menu = document.getElementById("rclickmenu");
-document.addEventListener("contextmenu",async function(e){
-    e.preventDefault();
-    if (e.button === 2) {
-        menu.style.display = "block";
+var menuVisible = false;
+
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault(); // Prevent the default context menu
+    var mouseX = e.pageX;
+    var mouseY = e.pageY;
+
+    if (menuVisible) {
+       
         menu.style.transition = "0.5s";
-        menu.style.backgroundColor = "rgba(90, 90, 90, 0)";
-        menu.style.backdropFilter = "blur(0px)";
-        menu.style.left = e.pageX + "px";
-        menu.style.top = e.pageY + "px";
-    
-        setTimeout(async () => {
-            menu.style.transition = "0s";
-            menu.style.display = "none";
-    
-            await POSH.pause(1);
-    
-            menu.style.display = "block";
-            menu.style.transition = "0.5s";
-            menu.style.backdropFilter = "blur(6px)";
-            menu.style.backgroundColor = "rgba(90, 90, 90, 0.8)";
-    
-            await POSH.pause(500);
-        }, 510);
+        menu.style.opacity = "0";
+
+        setTimeout(function () {
+          
+            menu.style.transition = "0s"; 
+            menu.style.left = mouseX + "px";
+            menu.style.top = mouseY + "px";
+            menu.style.opacity = "1"; 
+
+  
+
+        }, 500); 
+    } else {
+         
+        menu.style.transition = "0s"; 
+        menu.style.left = mouseX + "px";
+        menu.style.top = mouseY + "px";
+        menu.style.opacity = "1"; 
+        menu.style.display = "block"; 
+
+        
+
+        menuVisible = true;
     }
-    
-    if (e.button === 0) {
-        console.log("click");
-        menu.style.backgroundColor = "rgba(90, 90, 90, 0)";
-    
-        setTimeout(() => {
-            menu.style.display = "none";
-        }, 500);
+});
+
+// Handle left-click to hide the menu
+document.addEventListener("click", function (e) {
+    if (e.button === 0 && menuVisible) {
+        menu.style.display = "none";
+        menuVisible = false;
     }
-    
 });
