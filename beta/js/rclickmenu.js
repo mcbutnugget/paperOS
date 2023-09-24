@@ -9,7 +9,6 @@ document.addEventListener("contextmenu", function (e) {
     if (menuVisible) {
        
         menu.style.transition = "0.5s";
-        menu.style.opacity = "0";
 
         setTimeout(function () {
           
@@ -21,6 +20,8 @@ document.addEventListener("contextmenu", function (e) {
   
 
         }, 500); 
+
+        menuVisible = false;
     } else {
          
         menu.style.transition = "0s"; 
