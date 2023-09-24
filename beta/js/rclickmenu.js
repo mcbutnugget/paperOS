@@ -11,7 +11,6 @@ document.addEventListener("contextmenu",async function(e){
         menu.style.left = e.pageX+"px";
         menu.style.top = e.pageY+"px";
         await POSH.pause(0);
-        menu.style.display = "block";
         menu.style.transition = "0.5s";
         menu.style.backgroundColor = "rgba(90, 90, 90, 0.8)"
         await POSH.pause(500);
