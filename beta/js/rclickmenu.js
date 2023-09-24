@@ -3,8 +3,8 @@ document.addEventListener("contextmenu",async function(e){
     if(e.button===2){
         e.preventDefault();
         console.log("rclick");
-        menu.style.top = e.clientY+"px";
-        menu.style.left = e.clientY+"px";
+        menu.style.top = e.pageX+"px";
+        menu.style.left = e.pageY+"px";
         menu.style.display = "block";
         menu.style.backgroundColor = "rgba(90, 90, 90, 0.8)"
         await POSH.pause(500);
