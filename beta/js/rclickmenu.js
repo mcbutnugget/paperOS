@@ -1,5 +1,5 @@
 var menu = document.getElementById("rclickmenu");
-document.addEventListener("click",async function(e){
+document.addEventListener("contextmenu",async function(e){
     if(e.button===2){
         console.log("rclick");
         menu.style.top = e.clientY+"px";
