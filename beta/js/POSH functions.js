@@ -289,7 +289,14 @@ window.computator = [
     ["paperOS_appdat",[
       ["..",[]],
       ["functions.js",functions_js],
-      ["stickynote.js",stickynote_js]
+      ["stickynote.js",stickynote_js],
+      ["icons",[
+        ["backgrounds",[
+          ["BG1.png",readDisk("../icons/backgrounds/BG1.png")],
+          ["BG2.png",readDisk("../icons/backgrounds/BG2.png")],
+          ["BG3.png",readDisk("../icons/backgrounds/BG3.png")],
+        ]]
+      ]]
     ]]
     
     ] 
@@ -391,6 +398,26 @@ function sleep(ms) {
   }
 }
 }*/
+
+function readDisk(fileInput) {
+  if (fileInput.files.length > 0) {
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+
+    // Set up an event listener for when the file is loaded
+    reader.onload = function (event) {
+      // Access the file content here
+      const fileContent = event.target.result;
+      console.log('File content:', fileContent);
+
+      // Now you can process the file content as needed
+    };
+
+    // Read the file as text
+    reader.readAsText(file);
+  }
+}
+
 async function setColor(obj, col){
    if(obj=="bg"){
               document.body.style.backgroundColor=col;
