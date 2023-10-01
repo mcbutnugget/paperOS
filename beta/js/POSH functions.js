@@ -419,7 +419,11 @@ function readDisk(filepath) {
       reader.onload = function (event) {
         // Access the file content here
         const fileContent = event.target.result;
-        console.log('File content:', fileContent);
+        if (fileContent) {
+          console.log('File content:', fileContent);
+        } else {
+          console.error('Failed to read file content.');
+        }
 
         // Now you can process the file content as needed
 
@@ -427,8 +431,15 @@ function readDisk(filepath) {
         fileInput.remove();
       };
 
+      // Set up an event listener for potential errors during file reading
+      reader.onerror = function (event) {
+        console.error('Error reading the file:', event.target.error);
+      };
+
       // Read the file as text
       reader.readAsText(file);
+    } else {
+      console.error('No file selected.');
     }
   });
 }
