@@ -418,7 +418,13 @@ function readDisk(filepath) {
   return fileData;
 }
 
+function createDataUrl(binaryImageData) {
+  // Create a Blob URL from the binary data
+  const blobUrl = URL.createObjectURL(binaryImageData);
 
+  // Return the Blob URL as a data URL
+  return blobUrl;
+}
 async function setColor(obj, col){
    if(obj=="bg"){
               document.body.style.backgroundColor=col;
