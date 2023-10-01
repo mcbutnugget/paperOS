@@ -292,16 +292,15 @@ window.computator = [
       ["stickynote.js",stickynote_js],
       ["icons",[
         ["backgrounds",[
-          //["BG1.png",readDisk("../icons/backgrounds/BG1.png")],
-         // ["BG2.png",readDisk("../icons/backgrounds/BG2.png")],
-          //["BG3.png",readDisk("../icons/backgrounds/BG3.png")],
+          ["BG1.png",readDisk("../icons/backgrounds/BG1.png")],
+         ["BG2.png",readDisk("../icons/backgrounds/BG2.png")],
+          ["BG3.png",readDisk("../icons/backgrounds/BG3.png")],
         ]]
       ]]
     ]]
     
     ] 
   ]
-    
   ];
   localStorage.setItem("computator",JSON.stringify(computator));
 }else{
@@ -399,23 +398,39 @@ function sleep(ms) {
 }
 }*/
 
-function readDisk(fileInput) {
-  if (fileInput.files.length > 0) {
-    const file = fileInput.files[0];
-    const reader = new FileReader();
+function readDisk(filepath) {
+  // Create a file input element dynamically
+  const fileInput = $('<input type="file" style="display: none;">');
 
-    // Set up an event listener for when the file is loaded
-    reader.onload = function (event) {
-      // Access the file content here
-      const fileContent = event.target.result;
-      console.log('File content:', fileContent);
+  // Append the file input to the document
+  $('body').append(fileInput);
 
-      // Now you can process the file content as needed
-    };
+  // Trigger a click event on the file input to open the file dialog
+  fileInput.click();
 
-    // Read the file as text
-    reader.readAsText(file);
-  }
+  // Listen for the change event on the file input
+  fileInput.on('change', function () {
+    const file = this.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      // Set up an event listener for when the file is loaded
+      reader.onload = function (event) {
+        // Access the file content here
+        const fileContent = event.target.result;
+        console.log('File content:', fileContent);
+
+        // Now you can process the file content as needed
+
+        // Remove the file input element
+        fileInput.remove();
+      };
+
+      // Read the file as text
+      reader.readAsText(file);
+    }
+  });
 }
 
 async function setColor(obj, col){
