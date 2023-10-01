@@ -1,6 +1,6 @@
 var scrollOpen = false;
 
-async function openPoster(data) {
+function openPoster(data) {
         console.log(createDataUrl(data,"image/png"))
       createWindow("poster", `<img src="${createDataUrl(data,"image/png")}" width="100%" height="100%" loading="lazy"/>`, "../icons/logos/poster.png");
   }
