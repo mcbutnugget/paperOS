@@ -417,13 +417,19 @@ function readDisk(filepath) {
 }
 
 function createDataUrl(binaryData, mimeType) {
-  // Encode the binary data as base64
-  const base64Data = btoa(binaryData);
+  // Create a Uint8Array from the binary data
+  const uint8Array = new Uint8Array(binaryData.length);
+  for (let i = 0; i < binaryData.length; i++) {
+    uint8Array[i] = binaryData.charCodeAt(i);
+  }
 
-  // Construct the data URL with the appropriate format
-  const dataUrl = `data:${mimeType};base64,${base64Data}`;
+  // Create a Blob from the Uint8Array
+  const blob = new Blob([uint8Array], { type: mimeType });
 
-  return dataUrl;
+  // Create a Blob URL
+  const blobUrl = URL.createObjectURL(blob);
+
+  return blobUrl;
 }
 
 async function setColor(obj, col){
