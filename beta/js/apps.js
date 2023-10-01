@@ -1,8 +1,12 @@
 var scrollOpen = false;
 
-function openPoster(data){
-    createWindow("poster",`<img src="data:${data}" width="100%" height="100%"/>`,"../icons/logos/poster.png");
-}
+function openPoster(data) {
+    // Create a data URL from the binary data
+    const dataURL = `data:image/png;base64,${btoa(data)}`;
+  
+    // Create a window with the <img> element as its content
+    createWindow("poster", `<img src="${dataURL}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+  }
 
 function openStickynote(data){
     createWindow("stickynote", `
