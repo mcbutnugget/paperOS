@@ -1,11 +1,16 @@
 var scrollOpen = false;
 
-function openPoster(data) {
-
-    // Create a window with the <img> element as its content
-    createWindow("poster", `<img src="${createDataUrl(data)}" width="100%" height="100%" loading="lazy"/>`, "../icons/logos/poster.png");
+async function openPoster(data) {
+    try {
+      // Get the data URL with the awaited createDataUrl function
+      const dataUrl = await createDataUrl(data);
+  
+      // Create a window with the <img> element as its content
+      createWindow("poster", `<img src="${dataUrl}" width="100%" height="100%" loading="lazy"/>`, "../icons/logos/poster.png");
+    } catch (error) {
+      console.error(error);
+    }
   }
-
 function openStickynote(data){
     createWindow("stickynote", `
     <link rel="stylesheet" href="../styles/stickynote.css">
