@@ -1,7 +1,7 @@
 var scrollOpen = false;
 
 function openPoster(data){
-    createWindow("poster",`<img src="${URL.createObjectURL(data)}" width="100%" height="100%"/>`,"../icons/logos/poster.png");
+    createWindow("poster",`<img src="data:${data}" width="100%" height="100%"/>`,"../icons/logos/poster.png");
 }
 
 function openStickynote(data){
