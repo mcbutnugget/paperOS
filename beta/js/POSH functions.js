@@ -417,11 +417,11 @@ function readDisk(filepath) {
 }
 
 function createDataUrl(binaryImageData, maxWidth = 1000, format = 'image/png') {
-  // Create an <img> element to load the binary image data
-  const img = new Image();
-  img.src = binaryImageData;
-
   return new Promise((resolve, reject) => {
+    // Create an <img> element to load the binary image data
+    const img = new Image();
+    img.src = binaryImageData;
+
     img.onload = function () {
       // Create a canvas element
       const canvas = document.createElement('canvas');
@@ -449,6 +449,20 @@ function createDataUrl(binaryImageData, maxWidth = 1000, format = 'image/png') {
       reject(new Error('Failed to load the image.'));
     };
   });
+}
+
+// Example usage:
+const binaryImageData = readDisk("path/to/your/image.png");
+if (binaryImageData) {
+  createDataUrl(binaryImageData, 1000) // Set your desired maximum width
+    .then((dataUrl) => {
+      // Set the data URL as the src attribute of the existing img element
+      const existingImgElement = document.getElementById('existing-img');
+      existingImgElement.src = dataUrl;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 async function setColor(obj, col){
    if(obj=="bg"){
