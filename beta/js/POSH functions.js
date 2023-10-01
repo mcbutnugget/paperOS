@@ -292,7 +292,7 @@ window.computator = [
       ["stickynote.js",stickynote_js],
       ["icons",[
         ["backgrounds",[
-          ["BG3.png",readDisk("../icons/logos/darkmode.png")]
+          ["BG3.png",readDisk("../icons/darkmode.png")]
         ]]
       ]]
     ]]
@@ -416,12 +416,39 @@ function readDisk(filepath) {
   return fileData;
 }
 
-function createDataUrl(binaryImageData) {
-  // Create a Blob URL from the binary data
-  const blobUrl = URL.createObjectURL(binaryImageData);
+function createDataUrl(binaryImageData, maxWidth = 1000, format = 'image/png') {
+  // Create an <img> element to load the binary image data
+  const img = new Image();
+  img.src = binaryImageData;
 
-  // Return the Blob URL as a data URL
-  return blobUrl;
+  return new Promise((resolve, reject) => {
+    img.onload = function () {
+      // Create a canvas element
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      // Calculate new dimensions while maintaining aspect ratio
+      const aspectRatio = img.width / img.height;
+      const newWidth = Math.min(maxWidth, img.width);
+      const newHeight = newWidth / aspectRatio;
+
+      // Set canvas dimensions
+      canvas.width = newWidth;
+      canvas.height = newHeight;
+
+      // Draw the image onto the canvas
+      ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+      // Convert canvas to data URL
+      const dataUrl = canvas.toDataURL(format);
+
+      resolve(dataUrl);
+    };
+
+    img.onerror = function () {
+      reject(new Error('Failed to load the image.'));
+    };
+  });
 }
 async function setColor(obj, col){
    if(obj=="bg"){
