@@ -399,50 +399,25 @@ function sleep(ms) {
 }*/
 
 function readDisk(filepath) {
-  // Create a file input element dynamically
-  const fileInput = $('<input type="file" style="display: none;">');
+  let fileData = null;
 
-  // Append the file input to the document
-  $('body').append(fileInput);
-
-  // Trigger a click event on the file input to open the file dialog
-  fileInput.click();
-
-  // Listen for the change event on the file input
-  fileInput.on('change', function () {
-    const file = this.files[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      // Set up an event listener for when the file is loaded
-      reader.onload = function (event) {
-        // Access the file content here
-        const fileContent = event.target.result;
-        if (fileContent) {
-          console.log('File content:', fileContent);
-        } else {
-          console.error('Failed to read file content.');
-        }
-
-        // Now you can process the file content as needed
-
-        // Remove the file input element
-        fileInput.remove();
-      };
-
-      // Set up an event listener for potential errors during file reading
-      reader.onerror = function (event) {
-        console.error('Error reading the file:', event.target.error);
-      };
-
-      // Read the file as text
-      reader.readAsText(file);
-    } else {
-      console.error('No file selected.');
+  $.ajax({
+    url: filepath,
+    dataType: "text",
+    async: false, // Make the request synchronous
+    success: function (data) {
+      // Assign the file data directly
+      fileData = data;
+    },
+    error: function (xhr, status, error) {
+      console.error('Error reading the file:', error);
+      // Handle the error case as needed
     }
   });
+
+  return fileData;
 }
+
 
 async function setColor(obj, col){
    if(obj=="bg"){
