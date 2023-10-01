@@ -1,5 +1,9 @@
 var scrollOpen = false;
 
+function openPoster(data){
+    createWindow("poster",`<img src="${data}" width="100%" height="100%"/>`,"../icons/logos/poster.png");
+}
+
 function openStickynote(data){
     createWindow("stickynote", `
     <link rel="stylesheet" href="../styles/stickynote.css">
