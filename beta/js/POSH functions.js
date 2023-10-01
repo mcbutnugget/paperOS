@@ -292,9 +292,7 @@ window.computator = [
       ["stickynote.js",stickynote_js],
       ["icons",[
         ["backgrounds",[
-          ["BG1.png",readDisk("../icons/backgrounds/BG1.png")],
-          ["BG2.png",readDisk("../icons/backgrounds/BG2.png")],
-          ["BG3.png",readDisk("../icons/backgrounds/BG3.png")],
+          ["BG3.png",readDisk("../icons/backgrounds/BG3.png")]
         ]]
       ]]
     ]]
