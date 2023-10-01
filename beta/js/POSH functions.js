@@ -416,20 +416,20 @@ function readDisk(filepath) {
   return fileData;
 }
 
-function createDataUrl(binaryData, mimeType) {
-  // Create a Uint8Array from the binary data
-  const uint8Array = new Uint8Array(binaryData.length);
-  for (let i = 0; i < binaryData.length; i++) {
-    uint8Array[i] = binaryData.charCodeAt(i);
+function extractImageFromBinary(binaryData) {
+  // Find the start of the image data, which is typically indicated by the PNG signature.
+  const pngSignature = "\x89PNG\r\n\x1A\n";
+  const startIndex = binaryData.indexOf(pngSignature);
+
+  if (startIndex !== -1) {
+    // Extract the image pixel data starting from the PNG signature.
+    const imageData = binaryData.substring(startIndex);
+
+    return imageData;
   }
 
-  // Create a Blob from the Uint8Array
-  const blob = new Blob([uint8Array], { type: mimeType });
-
-  // Create a Blob URL
-  const blobUrl = URL.createObjectURL(blob);
-
-  return blobUrl;
+  // If the PNG signature is not found, return null or handle the error as needed.
+  return null;
 }
 
 async function setColor(obj, col){
