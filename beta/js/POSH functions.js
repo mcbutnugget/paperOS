@@ -416,54 +416,14 @@ function readDisk(filepath) {
   return fileData;
 }
 
-function createDataUrl(binaryImageData, maxWidth = 1000, format = 'image/png') {
-  return new Promise((resolve, reject) => {
-    // Create an <img> element to load the binary image data
-    const img = new Image();
-    img.src = binaryImageData;
+function createDataUrl(binaryImageData) {
+  // Create a Blob URL from the binary data
+  const blobUrl = URL.createObjectURL(binaryImageData);
 
-    img.onload = function () {
-      // Create a canvas element
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-
-      // Calculate new dimensions while maintaining aspect ratio
-      const aspectRatio = img.width / img.height;
-      const newWidth = Math.min(maxWidth, img.width);
-      const newHeight = newWidth / aspectRatio;
-
-      // Set canvas dimensions
-      canvas.width = newWidth;
-      canvas.height = newHeight;
-
-      // Draw the image onto the canvas
-      ctx.drawImage(img, 0, 0, newWidth, newHeight);
-
-      // Convert canvas to data URL
-      const dataUrl = canvas.toDataURL(format);
-
-      resolve(dataUrl);
-    };
-
-    img.onerror = function () {
-      reject(new Error('Failed to load the image.'));
-    };
-  });
+  // Return the Blob URL as a data URL
+  return blobUrl;
 }
 
-// Example usage:
-const binaryImageData = readDisk("path/to/your/image.png");
-if (binaryImageData) {
-  createDataUrl(binaryImageData, 1000) // Set your desired maximum width
-    .then((dataUrl) => {
-      // Set the data URL as the src attribute of the existing img element
-      const existingImgElement = document.getElementById('existing-img');
-      existingImgElement.src = dataUrl;
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-}
 async function setColor(obj, col){
    if(obj=="bg"){
               document.body.style.backgroundColor=col;
