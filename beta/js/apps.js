@@ -3,7 +3,7 @@ var scrollOpen = false;
 function openPoster(data) {
 
     // Create a window with the <img> element as its content
-    createWindow("poster", `<img src="${createDataUrl(data)}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+    createWindow("poster", `<img src="${createDataUrl(data)}" width="100%" height="100%" loading="lazy"/>`, "../icons/logos/poster.png");
   }
 
 function openStickynote(data){
