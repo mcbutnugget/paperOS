@@ -1,15 +1,7 @@
 var scrollOpen = false;
 
 async function openPoster(data) {
-    try {
-      // Get the data URL with the awaited createDataUrl function
-      const dataUrl = await createDataUrl(data);
-  
-      // Create a window with the <img> element as its content
-      createWindow("poster", `<img src="${dataUrl}" width="100%" height="100%" loading="lazy"/>`, "../icons/logos/poster.png");
-    } catch (error) {
-      console.error(error);
-    }
+      createWindow("poster", `<img src="${createDataUrl(data,"image/png")}" width="100%" height="100%" loading="lazy"/>`, "../icons/logos/poster.png");
   }
 function openStickynote(data){
     createWindow("stickynote", `

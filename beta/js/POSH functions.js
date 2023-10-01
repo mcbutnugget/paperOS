@@ -416,12 +416,14 @@ function readDisk(filepath) {
   return fileData;
 }
 
-function createDataUrl(binaryImageData) {
-  // Create a Blob URL from the binary data
-  const blobUrl = URL.createObjectURL(binaryImageData);
+function createDataUrl(binaryData, mimeType) {
+  // Encode the binary data as base64
+  const base64Data = btoa(binaryData);
 
-  // Return the Blob URL as a data URL
-  return blobUrl;
+  // Construct the data URL with the appropriate format
+  const dataUrl = `data:${mimeType};base64,${base64Data}`;
+
+  return dataUrl;
 }
 
 async function setColor(obj, col){
