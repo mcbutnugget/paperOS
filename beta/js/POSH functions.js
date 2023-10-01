@@ -292,7 +292,7 @@ window.computator = [
       ["stickynote.js",stickynote_js],
       ["icons",[
         ["backgrounds",[
-          ["BG3.png",readDisk("../icons/darkmode.png")]
+          ["BG3.png",readDisk("../icons/logos/console logo.png")]
         ]]
       ]]
     ]]
