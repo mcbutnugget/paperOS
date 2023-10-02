@@ -6,14 +6,12 @@ function openPoster(data) {
   
     if (imageData) {
       // Create a Blob from the image data with the correct MIME type.
-      const mimeType = "image/png"; // Change to the appropriate MIME type if needed.
-      const blob = new Blob([imageData], { type: mimeType });
-  
-      // Create a Blob URL from the Blob and set it as the src of the img element.
-      const blobUrl = URL.createObjectURL(blob);
+      var mimeType = "image/png"; // Change to the appropriate MIME type if needed.
+      var blob = new Blob([imageData], { type: mimeType });
+
   
       // Create a window with the img element.
-      createWindow("poster", `<img src="${blobUrl}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+      createWindow("poster", `<img src="${URL.createObjectURL(blob)}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
     } else {
       // Handle the case where the image data couldn't be extracted.
       console.error("Image data extraction failed.");
