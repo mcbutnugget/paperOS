@@ -40,11 +40,11 @@ $(() => {
               folderData[folderData.length] = folderDataRaw[i][0];
             }
   
-            if(!folderData.includes(newCMD.split(" ").pop())){
-              if(newCMD.split(" ").pop().includes(".")){
-                createFile(computator,folderName,newCMD.split(" ").pop());
+            if(!folderData.includes(newCMD.split(" ",0).pop())){
+              if(newCMD.split(" ",0).pop().includes(".")){
+                createFile(computator,folderName,newCMD.split(" ",0).pop());
               }else{
-                createFolder(computator,folderName,newCMD.split(" ").pop());
+                createFolder(computator,folderName,newCMD.split(" ",0).pop());
               }
             $('#shellData').append(`<h4 class = 'user_disp'>created!</h4>`);
           }else{
@@ -56,9 +56,9 @@ $(() => {
           //goes into a folder that you made
 
       }else if(newCMD.startsWith("goto ")||newCMD.startsWith("cd ")){
-          var isNull = PathToData(computator,folderName+"/"+newCMD.split(" ").pop());
+          var isNull = PathToData(computator,folderName+"/"+newCMD.split(" ",0).pop());
           if(isNull!=null){
-            goto(folderName,newCMD.split(" ").pop());
+            goto(folderName,newCMD.split(" ",1).pop());
           folderDataRaw = PathToData(computator,folderName);
           document.querySelector("tag").innerHTML=folderName+"?>";
           //clears the console
@@ -149,8 +149,8 @@ seeIn <i>file name</i> - see's the contents of a file, should be used when stick
 write[file name] : <i>data</i> - writes to the contents of a file, should be used when stickynote\nbreaks
            </h4>`);
         }else if(newCMD.startsWith("sn ")){
-          if(PathToFile(computator,folderName+"/"+newCMD.split(" ").pop())!=null&&!newCMD.includes("..")){
-          if(computator,folderName+"/"+newCMD.split(" ").pop()=="p/functions.js"){
+          if(PathToFile(computator,folderName+"/"+newCMD.split(" ",0).pop())!=null&&!newCMD.includes("..")){
+          if(computator,folderName+"/"+newCMD.split(" ",0).pop()=="p/functions.js"){
           }
             $('#shellData').append(`<h4 class = 'user_disp'>opening...</h4>`);
             localStorage.setItem("location",folderName+"/"+newCMD.split(" ").pop());
