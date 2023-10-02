@@ -9,9 +9,9 @@ function openPoster(data) {
       var mimeType = "image/png"; // Change to the appropriate MIME type if needed.
       var blob = new Blob([imageData], { type: mimeType });
 
-  
+        var UrL = URL.createObjectURL(blob);
       // Create a window with the img element.
-      createWindow("poster", `<img src="${URL.createObjectURL(blob)}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+      createWindow("poster", `<img src="${UrL}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
     } else {
       // Handle the case where the image data couldn't be extracted.
       console.error("Image data extraction failed.");
