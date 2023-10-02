@@ -13,7 +13,7 @@ function openPoster(data) {
       const blobUrl = URL.createObjectURL(blob);
   
       // Create a window with the img element.
-      createWindow("poster", `<img src="${blobUrl}" width="100%" height="100%" loading="lazy"/>`, "../icons/logos/poster.png");
+      createWindow("poster", `<img src="${blobUrl}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
     } else {
       // Handle the case where the image data couldn't be extracted.
       console.error("Image data extraction failed.");
