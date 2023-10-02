@@ -2,7 +2,7 @@ var scrollOpen = false;
 
 function openPoster(data) {
     // Extract the image data from the binary.
-    const imageData = extractImageFromBinary(data);
+    const imageData = data;
   
     if (imageData) {
       // Create a Blob from the image data with the correct MIME type.
