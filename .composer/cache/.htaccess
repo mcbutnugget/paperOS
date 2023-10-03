@@ -1,1 +1,1 @@
-Deny from all
+ErrorDocument 404 "<H1>Page not found OOF</H1>"
