@@ -289,12 +289,16 @@ window.computator = [
     ["paperOS_appdat",[
       ["..",[]],
       ["functions.js",functions_js],
-      ["stickynote.js",stickynote_js]
+      ["stickynote.js",stickynote_js],
+      ["icons",[
+        ["backgrounds",[
+          ["console logo.png",readDisk("../icons/logos/console logo.png")]
+        ]]
+      ]]
     ]]
     
     ] 
   ]
-    
   ];
   localStorage.setItem("computator",JSON.stringify(computator));
 }else{
@@ -391,6 +395,43 @@ function sleep(ms) {
   }
 }
 }*/
+
+function readDisk(filepath) {
+  let fileData = null;
+
+  $.ajax({
+    url: filepath,
+    dataType: "text",
+    async: false, // Make the request synchronous
+    success: function (data) {
+      // Assign the file data directly
+      fileData = data;
+    },
+    error: function (xhr, status, error) {
+      console.error('Error reading the file:', error);
+      // Handle the error case as needed
+    }
+  });
+
+  return fileData;
+}
+
+function extractImageFromBinary(binaryData) {
+  // Find the start of the image data, which is typically indicated by the PNG signature.
+  const pngSignature = "\x89PNG\r\n\x1A\n";
+  const startIndex = binaryData.indexOf(pngSignature);
+
+  if (startIndex !== -1) {
+    // Extract the image pixel data starting from the PNG signature.
+    const imageData = binaryData.substring(startIndex);
+
+    return imageData;
+  }
+
+  // If the PNG signature is not found, return null or handle the error as needed.
+  return null;
+}
+
 async function setColor(obj, col){
    if(obj=="bg"){
               document.body.style.backgroundColor=col;
@@ -632,7 +673,9 @@ if(running==true){
   document.querySelector("tag").innerHTML="";
 }
 
-
+/*document.addEventListener("click",function(event){
+  if(event.button=="1")
+});*/
 
 
 

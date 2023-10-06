@@ -1,5 +1,5 @@
 body{
-    background-image: url('../icons/backgrounds/defaultBG.png');
+    background-image: url('../icons/backgrounds/BG1.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -274,4 +274,31 @@ img{
     border-radius: 2000px;
     width:7vw;
     height:7vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#rclickmenu{
+    z-index:999999999;
+    display:none;
+    position:absolute;
+    height:20vw;
+    width:10vw;
+    background-color:rgba(20, 20, 20, 0);
+    border-radius: 1vw;
+    transition: 0.5s;
+    backdrop-filter: blur(6px);
 }

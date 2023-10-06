@@ -1,14 +1,31 @@
 var scrollOpen = false;
 
+function openPoster(data) {
+    // Extract the image data from the binary.
+    const imageData = data;
+  
+    if (imageData) {
+      // Create a Blob from the image data with the correct MIME type.
+      var mimeType = "image/png"; // Change to the appropriate MIME type if needed.
+      var blob = new Blob([imageData], { type: mimeType });
+
+        var UrL = URL.createObjectURL(blob);
+      // Create a window with the img element.
+      createWindow("poster", `<img src="${UrL}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+    } else {
+      // Handle the case where the image data couldn't be extracted.
+      console.error("Image data extraction failed.");
+    }
+  }
 function openStickynote(data){
     createWindow("stickynote", `
     <link rel="stylesheet" href="../styles/stickynote.css">
-    <script src="stickynote.js" defer></script>
+    <script src="../js/stickynote.js" defer></script>
 <div id="body2">
     <div id="controlButtons">
-    <button id="saveFile" style="width:33.3%; height:1.5%;" onClick = "save();">save</button><button id="saveAsFile" style="width:33.3%; height:1.5%;">save as</button><button id="openFile" style="width:33.3%; height:1.5%;">open</button>
+    <button id="saveFile" style="width:33.3%; height:1.5%;" onClick = "save()">save</button><button id="saveAsFile" style="width:33.3%; height:1.5%;">save as</button><button id="openFile" style="width:33.3%; height:1.5%;">open</button>
     </div>
-    <textarea id="code" value="${data}"></textarea>
+    <textarea id="code">${data}</textarea>
 </div>
 `,"../icons/logos/stickynoteIcon.png");
 }

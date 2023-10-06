@@ -1,8 +1,5 @@
 var textarea = document.getElementById('code');
 
-function save(){
-
-}
 
 function load(){
     var bootloader = localStorage.getItem("computator");
@@ -14,7 +11,8 @@ var data = [""];
 function save(){
 data=document.getElementById("code").value;
 writeFile(computator,localStorage.getItem("location"),data);
-
+localStorage.setItem("computator",JSON.stringify(computator));
+console.log()
 }
 
 $(document).keydown(function(e) {

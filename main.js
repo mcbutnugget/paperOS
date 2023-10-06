@@ -32,9 +32,6 @@ function load(){
     document.getElementById("html").style.backgroundImage = "url('https://cdn.glitch.global/bcd81597-8b94-49e2-aee2-81079e0ec671/paper(1).png?v=1670306442348')";
   
 }
-  if (!localStorage.pass) {
-    location.href = "paswordmaker.html";
-  }
 
 }
 function menu(){
