@@ -8,6 +8,7 @@ function openPoster(data) {
         // Create a URL for the Blob.
         var url = URL.createObjectURL(blob);
 
+        console.log(url);
         // Call your createWindow function to display the image.
         createWindow("poster", `<img src="${url}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
     } else {
