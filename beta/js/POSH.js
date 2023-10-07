@@ -151,11 +151,11 @@ write[file name] : <i>data</i> - writes to the contents of a file, should be use
            </h4>`);
         }else if(newCMD.startsWith("sn ")){
           if(PathToFile(computator,folderName+"/"+newCMD.split(" ",3).pop())!=null&&newCMD!=".."){
-          if(computator,folderName+"/"+newCMD.split(" ",3).pop()=="p/functions.js"){
+          if(computator,folderName+"/"+newCMD.split(" ",3).pop()=="functions.js"){
           }
             $('#shellData').append(`<h4 class = 'user_disp'>opening...</h4>`);
             localStorage.setItem("location",folderName+"/"+newCMD.split(" ",3).pop());
-            localStorage.setItem(folderName+"/"+newCMD.split(" ").pop(),PathToFile(computator,folderName+"/"+newCMD.split(" ",2).pop()));
+            localStorage.setItem(folderName+"/"+newCMD.split(" ").pop(),PathToFile(computator,folderName+"/"+newCMD.split(" ",3).pop()));
             openStickynote(localStorage.getItem(localStorage.getItem("location")));
           }else{
             $('#shellData').append(`<h4 class = 'error'>there is nothing there or that is a folder,\n\nif you want to go into a folder, type 'goto 'foldername</h4>`);
