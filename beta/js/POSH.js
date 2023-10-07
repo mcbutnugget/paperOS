@@ -1,4 +1,5 @@
 //start of console
+
 $(() => {
   clear();
   if(PathToFile(computator,"p/data.incd").includes("welcome:true")){
@@ -56,7 +57,7 @@ $(() => {
           //goes into a folder that you made
 
       }else if(newCMD.startsWith("goto ")||newCMD.startsWith("cd ")){
-          var isNull = PathToData(computator,folderName+"/"+newCMD.split(" ",1).pop());
+          var isNull = PathToData(computator,folderName+"/"+newCMD.split(" ",2).pop());
           if(isNull!=null){
             goto(folderName,newCMD.split(" ",2).pop());
           folderDataRaw = PathToData(computator,folderName);
@@ -79,9 +80,9 @@ $(() => {
   
             if(folderData.includes(newCMD.split(" ", 2).pop())){
               if(newCMD.split(" ",2).pop().includes(".")){
-                deleteFile(computator,folderName,newCMD.replace("del ", "").replace("rm ", ""));
+                deleteFile(computator,folderName,newCMD.split(" ",2).pop());
               }else{
-                deleteFolder(computator,folderName,newCMD.replace("del ", "").replace("rm ", ""));
+                deleteFolder(computator,folderName,newCMD.split(" ",2).pop());
               }
             $('#shellData').append(`<h4 class = 'user_disp'>deleted!</h4>`);
           }else{
