@@ -41,11 +41,11 @@ $(() => {
               folderData[folderData.length] = folderDataRaw[i][0];
             }
   
-            if(!folderData.includes(newCMD.split(" ",3).pop())){
-              if(newCMD.split(" ",3).pop().includes(".")){
-                createFile(computator,folderName,newCMD.split(" ",3).pop());
+            if(!folderData.includes((newCMD.split(" ",2)).pop())){
+              if((newCMD.split(" ",2)).pop().includes(".")){
+                createFile(computator,folderName,(newCMD.split(" ",2)).pop());
               }else{
-                createFolder(computator,folderName,newCMD.split(" ",3).pop());
+                createFolder(computator,folderName,(newCMD.split(" ",2)).pop());
               }
             $('#shellData').append(`<h4 class = 'user_disp'>created!</h4>`);
           }else{
@@ -57,9 +57,9 @@ $(() => {
           //goes into a folder that you made
 
       }else if(newCMD.startsWith("goto ")||newCMD.startsWith("cd ")){
-          var isNull = PathToData(computator,folderName+"/"+newCMD.split(" ",3).pop());
+          var isNull = PathToData(computator,folderName+"/"+(newCMD.split(" ",2)).pop());
           if(isNull!=null){
-            goto(folderName,newCMD.split(" ",3).pop());
+            goto(folderName,(newCMD.split(" ",2)).pop());
           folderDataRaw = PathToData(computator,folderName);
           document.querySelector("tag").innerHTML=folderName+"?>";
           //clears the console
@@ -150,19 +150,19 @@ seeIn <i>file name</i> - see's the contents of a file, should be used when stick
 write[file name] : <i>data</i> - writes to the contents of a file, should be used when stickynote\nbreaks
            </h4>`);
         }else if(newCMD.startsWith("sn ")){
-          if(PathToFile(computator,folderName+"/"+newCMD.split(" ",3).pop())!=null&&newCMD!=".."){
-          if(computator,folderName+"/"+newCMD.split(" ",3).pop()=="functions.js"){
+          if(PathToFile(computator,folderName+"/"+(newCMD.split(" ",2)).pop())!=null&&newCMD!=".."){
+          if(computator,folderName+"/"+(newCMD.split(" ",2)).pop()=="functions.js"){
           }
             $('#shellData').append(`<h4 class = 'user_disp'>opening...</h4>`);
-            localStorage.setItem("location",folderName+"/"+newCMD.split(" ",3).pop());
-            localStorage.setItem(folderName+"/"+newCMD.split(" ").pop(),PathToFile(computator,folderName+"/"+newCMD.split(" ",3).pop()));
+            localStorage.setItem("location",folderName+"/"+(newCMD.split(" ",2)).pop());
+            localStorage.setItem(folderName+"/"+newCMD.split(" ").pop(),PathToFile(computator,folderName+"/"+(newCMD.split(" ",2)).pop()));
             openStickynote(localStorage.getItem(localStorage.getItem("location")));
           }else{
             $('#shellData').append(`<h4 class = 'error'>there is nothing there or that is a folder,\n\nif you want to go into a folder, type 'goto 'foldername</h4>`);
           }
           }else if(newCMD.startsWith("run ")){
-            localStorage.setItem(folderName+"/"+newCMD.split(" ",3).pop(),PathToFile(computator,folderName+"/"+newCMD.split(" ",3).pop()));
-          localStorage.setItem("code-to-run",folderName+"/"+newCMD.split(" ",3).pop());
+            localStorage.setItem(folderName+"/"+(newCMD.split(" ",2)).pop(),PathToFile(computator,folderName+"/"+(newCMD.split(" ",2)).pop()));
+          localStorage.setItem("code-to-run",folderName+"/"+(newCMD.split(" ",2)).pop());
           document.location.href="runner.html";
 
         }else if(newCMD=="about"){
