@@ -105,9 +105,9 @@ $(() => {
     
               if(folderData.includes(newCMD.split(" ").pop())){
                 if(newCMD.split(" ").pop().includes(".")){
-                  deleteFile(computator,folderName,newCMD.split(" ").pop());
+                  deleteFile(computator,folderName,newCMD.split(" ", 2).pop());
                 }else{
-                  deleteFolder(computator,folderName,newCMD.split(" ").pop());
+                  deleteFolder(computator,folderName,newCMD.split(" ", 2).pop());
                 }
                 say("deleted! if you want this to not be here, just type 'goto ..' or 'cd ..',\n\nand edit data.incd to be 'warn:false' instead of 'warn:true'");
             }else{
