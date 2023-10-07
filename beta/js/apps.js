@@ -1,21 +1,23 @@
 var scrollOpen = false;
 
 function openPoster(data) {
+    console.log(data);
+  
     if (data) {
-        // Create a Blob from the binary data.
-        var blob = new Blob([data]);
-
-        // Create a URL for the Blob.
-        var url = URL.createObjectURL(blob);
-
-        console.log(url);
-        // Call your createWindow function to display the image.
-        createWindow("poster", `<img src="${url}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+      // Create a Blob from the binary data.
+      var blob = new Blob([data]);
+  
+      // Create a URL for the Blob.
+      var url = URL.createObjectURL(blob);
+  
+      console.log(url);
+      // Call your createWindow function to display the image.
+      createWindow("poster", `<img src="${url}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
     } else {
-        // Handle the case where the image data is empty.
-        console.error("Image data is empty.");
+      // Handle the case where the image data is empty.
+      console.error("Image data is empty.");
     }
-}
+  }
 
 
 
