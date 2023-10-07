@@ -8,20 +8,14 @@ function openPoster(data) {
         // Create a URL for the Blob.
         var url = URL.createObjectURL(blob);
 
-        // Create an image element and set its src attribute.
-        var img = document.createElement("img");
-        img.src = url;
-        img.width = "100%";
-        img.height = "100%";
-
-        // Append the image element to the document or a specific container.
-        // For example, you can replace "document.body" with the container where you want to display the image.
-        document.body.appendChild(img);
+        // Call your createWindow function to display the image.
+        createWindow("poster", `<img src="${url}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
     } else {
         // Handle the case where the image data is empty.
         console.error("Image data is empty.");
     }
 }
+
 
 
 
