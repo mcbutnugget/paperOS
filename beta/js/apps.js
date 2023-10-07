@@ -5,18 +5,26 @@ function openPoster(data) {
     const imageData = data;
   
     if (imageData) {
-      // Create a Blob from the image data with the correct MIME type.
-      var mimeType = "image/png"; // Change to the appropriate MIME type if needed.
-      var blob = new Blob([imageData], { type: mimeType });
+        // Create a Blob from the image data with the correct MIME type.
+        var mimeType = "image/png"; // Change to the appropriate MIME type if needed.
+        var blob = new Blob([imageData], { type: mimeType });
 
         var UrL = URL.createObjectURL(blob);
-      // Create a window with the img element.
-      createWindow("poster", `<img src="${UrL}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+      
+        // Debugging: Log the URL
+        console.log("Image URL:", UrL);
+
+        // Debugging: Log the image data
+        console.log("Image Data:", imageData);
+
+        // Create a window with the img element.
+        createWindow("poster", `<img src="${UrL}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
     } else {
-      // Handle the case where the image data couldn't be extracted.
-      console.error("Image data extraction failed.");
+        // Handle the case where the image data couldn't be extracted.
+        console.error("Image data extraction failed.");
     }
-  }
+}
+
 function openStickynote(data){
     createWindow("stickynote", `
     <link rel="stylesheet" href="../styles/stickynote.css">
