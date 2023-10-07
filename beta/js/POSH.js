@@ -41,11 +41,11 @@ $(() => {
               folderData[folderData.length] = folderDataRaw[i][0];
             }
   
-            if(!folderData.includes(newCMD.split(" ",1).pop())){
-              if(newCMD.split(" ",1).pop().includes(".")){
-                createFile(computator,folderName,newCMD.split(" ",1).pop());
+            if(!folderData.includes(newCMD.split(" ",3).pop())){
+              if(newCMD.split(" ",3).pop().includes(".")){
+                createFile(computator,folderName,newCMD.split(" ",3).pop());
               }else{
-                createFolder(computator,folderName,newCMD.split(" ",1).pop());
+                createFolder(computator,folderName,newCMD.split(" ",3).pop());
               }
             $('#shellData').append(`<h4 class = 'user_disp'>created!</h4>`);
           }else{
@@ -57,9 +57,9 @@ $(() => {
           //goes into a folder that you made
 
       }else if(newCMD.startsWith("goto ")||newCMD.startsWith("cd ")){
-          var isNull = PathToData(computator,folderName+"/"+newCMD.split(" ",2).pop());
+          var isNull = PathToData(computator,folderName+"/"+newCMD.split(" ",3).pop());
           if(isNull!=null){
-            goto(folderName,newCMD.split(" ",2).pop());
+            goto(folderName,newCMD.split(" ",3).pop());
           folderDataRaw = PathToData(computator,folderName);
           document.querySelector("tag").innerHTML=folderName+"?>";
           //clears the console
