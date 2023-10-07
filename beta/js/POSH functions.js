@@ -284,8 +284,10 @@ window.computator = [
       ["functions.js",functions_js],
       ["stickynote.js",stickynote_js],
       ["icons",[
+        ["..",[]],
         ["backgrounds",[
-          ["console logo.png",readDisk("../icons/logos/console logo.png")]
+          ["..",[]],
+          ["console_logo.png",readDisk("../icons/logos/console logo.png")]
         ]]
       ]]
     ]]
