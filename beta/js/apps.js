@@ -10,7 +10,7 @@ function openPoster(data) {
   
       console.log(B64S);
       // Call your createWindow function to display the image.
-      createWindow("poster", `<img src="data:img/png;base64, ${B64S}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+      createWindow("poster", `<img src="data:img/png;base64, ${B64S}"/>`, "../icons/logos/poster.png");
     } else {
       // Handle the case where the image data is empty.
       console.error("Image data is empty.");
