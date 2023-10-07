@@ -4,13 +4,7 @@ function openPoster(data) {
     console.log(data);
   
     if (data) {
-         // Convert the binary image data to a base64 encoded string.
-        var b64S = btoa(String.fromCharCode.apply(null, new Uint8Array(data)));
-
-  
-      console.log(B64S);
-      // Call your createWindow function to display the image.
-      createWindow("poster", `<img src="data:img/png;base64, ${B64S}"/>`, "../icons/logos/poster.png");
+      createWindow("poster", `<img src="data:image/png;base64, ${data}"/>`, "../icons/logos/poster.png");
     } else {
       // Handle the case where the image data is empty.
       console.error("Image data is empty.");
