@@ -79,9 +79,9 @@ $(() => {
   
             if(folderData.includes(newCMD.split(" ", 2).pop())){
               if(newCMD.split(" ",2).pop().includes(".")){
-                deleteFile(computator,folderName,newCMD.split(" ", 2).pop());
+                deleteFile(computator,folderName,newCMD.replace("del ", "").replace("rm ", ""));
               }else{
-                deleteFolder(computator,folderName,newCMD.split(" ",2).pop());
+                deleteFolder(computator,folderName,newCMD.replace("del ", "").replace("rm ", ""));
               }
             $('#shellData').append(`<h4 class = 'user_disp'>deleted!</h4>`);
           }else{
