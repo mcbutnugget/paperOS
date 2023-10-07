@@ -4,7 +4,7 @@ function openPoster(data) {
     console.log(data);
   
     if (data) {
-      createWindow("poster", `<img src="data:image/png;base64, ${data}"/>`, "../icons/logos/poster.png");
+      createWindow("poster", `${data}"/>`, "../icons/logos/poster.png");
     } else {
       // Handle the case where the image data is empty.
       console.error("Image data is empty.");
