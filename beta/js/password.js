@@ -15,5 +15,8 @@ function detectPassword(){
         }
     }
 }
+function NewUser(){
+    
+}
 
 setInterval(detectPassword,1);

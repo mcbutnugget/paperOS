@@ -275,14 +275,7 @@ window.computator = [
     ["main",[
       ["..",[]],
       ["users",[
-        ["..",[]],
-        ["POWERUSR",[
-          ["..",[]],
-          ["userSettings.incd",`backgroundType:chalk\n`],
-          ["desk",[
-            ["..",[]]
-          ]]
-        ]]
+        ["..",[]]
       ]]
     ]],
     ["data.incd",`welcome:true\nwarn:true\nalert:false\nstartPath:p/main\n`],

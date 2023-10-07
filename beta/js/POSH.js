@@ -58,7 +58,7 @@ $(() => {
       }else if(newCMD.startsWith("goto ")||newCMD.startsWith("cd ")){
           var isNull = PathToData(computator,folderName+"/"+newCMD.split(" ",1).pop());
           if(isNull!=null){
-            goto(folderName,newCMD.split(" ",1).pop());
+            goto(folderName,newCMD.split(" ",2).pop());
           folderDataRaw = PathToData(computator,folderName);
           document.querySelector("tag").innerHTML=folderName+"?>";
           //clears the console
@@ -77,11 +77,11 @@ $(() => {
               folderData[folderData.length] = folderDataRaw[i][0];
             }
   
-            if(folderData.includes(newCMD.split(" ").pop())){
-              if(newCMD.split(" ").pop().includes(".")){
-                deleteFile(computator,folderName,newCMD.split(" ").pop());
+            if(folderData.includes(newCMD.split(" ", 2).pop())){
+              if(newCMD.split(" ",2).pop().includes(".")){
+                deleteFile(computator,folderName,newCMD.split(" ", 2).pop());
               }else{
-                deleteFolder(computator,folderName,newCMD.split(" ").pop());
+                deleteFolder(computator,folderName,newCMD.split(" ",2).pop());
               }
             $('#shellData').append(`<h4 class = 'user_disp'>deleted!</h4>`);
           }else{
