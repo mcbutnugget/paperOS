@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>paperCLP</title>
+        <script src="https://posh.glitch.me/libraries/library.js"></script>
+        <script>
+            function check(){
+                if(Key["Enter"]){
+                    var URL = document.querySelector("#URL");
+                    var search = document.querySelector("#search");
+
+                    search.src=URL.value;
+                }
+            }
+            setInterval(check,1);
+        </script>
+    </head>
+    <body>
+        <center>
+            <h1>paperCLP</h1>
+            <input type="text" id="URL"/>
+            <iframe id="search" src="about:blank" width="800" height="600" sandbox="allow-same-origin allow-scripts"></iframe>
+        </center>
+    </body>
+</html>
