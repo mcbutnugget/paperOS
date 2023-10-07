@@ -4,8 +4,12 @@ function openPoster(data) {
     console.log(data);
   
     if (data) {
-      // Create a Blob from the binary data.
-      var blob = new Blob([data]);
+        var dataBytes = new Uint8Array(data.length);
+        for (var i = 0; i < dataBytes.length; i++) {
+          dataBytes[i] = data.charCodeAt(i);
+        }
+        
+        var blob = new Blob([dataBytes])
   
       // Create a URL for the Blob.
       var url = URL.createObjectURL(blob);
