@@ -1,29 +1,24 @@
 var scrollOpen = false;
 
 function openPoster(data) {
-    // Extract the image data from the binary.
-    const imageData = data;
-  
-    if (imageData) {
-        // Create a Blob from the image data with the correct MIME type.
-        var mimeType = "image/png"; // Change to the appropriate MIME type if needed.
-        var blob = new Blob([imageData], { type: mimeType });
+    if (data) {
+        // Convert the binary data to a base64-encoded data URL.
+        var base64ImageData = btoa(String.fromCharCode.apply(null, new Uint8Array(data)));
 
-        var UrL = URL.createObjectURL(blob);
-      
-        // Debugging: Log the URL
-        console.log("Image URL:", UrL);
+        // Create a data URL with the correct MIME type.
+        var dataUrl = `data:image/png;base64,${base64ImageData}`;
 
-        // Debugging: Log the image data
-        console.log("Image Data:", imageData);
+        // Debugging: Log the data URL
+        console.log("Data URL:", dataUrl);
 
         // Create a window with the img element.
-        createWindow("poster", `<img src="${UrL}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+        createWindow("poster", `<img src="${dataUrl}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
     } else {
-        // Handle the case where the image data couldn't be extracted.
-        console.error("Image data extraction failed.");
+        // Handle the case where the image data is empty.
+        console.error("Image data is empty.");
     }
 }
+
 
 function openStickynote(data){
     createWindow("stickynote", `
