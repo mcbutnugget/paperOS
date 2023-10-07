@@ -2,22 +2,27 @@ var scrollOpen = false;
 
 function openPoster(data) {
     if (data) {
-        // Convert the binary data to a base64-encoded data URL.
-        var base64ImageData = btoa(String.fromCharCode.apply(null, new Uint8Array(data)));
+        // Create a Blob from the binary data.
+        var blob = new Blob([data]);
 
-        // Create a data URL with the correct MIME type.
-        var dataUrl = `data:image/png;base64,${base64ImageData}`;
+        // Create a URL for the Blob.
+        var url = URL.createObjectURL(blob);
 
-        // Debugging: Log the data URL
-        console.log("Data URL:", dataUrl);
+        // Create an image element and set its src attribute.
+        var img = document.createElement("img");
+        img.src = url;
+        img.width = "100%";
+        img.height = "100%";
 
-        // Create a window with the img element.
-        createWindow("poster", `<img src="${dataUrl}" width="100%" height="100%"/>`, "../icons/logos/poster.png");
+        // Append the image element to the document or a specific container.
+        // For example, you can replace "document.body" with the container where you want to display the image.
+        document.body.appendChild(img);
     } else {
         // Handle the case where the image data is empty.
         console.error("Image data is empty.");
     }
 }
+
 
 
 function openStickynote(data){
