@@ -391,9 +391,12 @@ function sleep(ms) {
 }
 }*/
 
-function decodeBase64(data) {
-  return atob(data);
+function encodeBase64(data) {
+  const encoder = new TextEncoder();
+  const encodedData = encoder.encode(data);
+  return btoa(encodedData);
 }
+
 
 function readDisk(filepath) {
   let fileData = null;
