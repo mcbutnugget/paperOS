@@ -111,11 +111,11 @@ function openSettings(){
 
 function Scroll(){
     if(scrollOpen==false){
-        document.getElementById('overlay').style.backgroundColor="rgba(32, 32, 32, 0.7);"
+        document.getElementById('overlay').style.backgroundColor="rgba(32, 32, 32, 0.7)";
         document.getElementById('overlay').style.top="0";
         scrollOpen=true;
     }else{
-        document.getElementById('overlay').style.backgroundColor="rgba(32, 32, 32, 0);"
+        document.getElementById('overlay').style.backgroundColor="rgba(32, 32, 32, 0)";
         document.getElementById('overlay').style.top="100%";
         scrollOpen=false;
     }
