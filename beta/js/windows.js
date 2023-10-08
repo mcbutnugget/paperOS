@@ -1,8 +1,8 @@
 var windowAmmount = 1;
 //window's appearing
-function createWindow(title, contents, img) {
+function createWindow(title, contents, img, w, h) {
     $('body').append(`
-<div class="window" style="left:`+ windowAmmount * 2 + `vw; top:` + windowAmmount * 2 + `vw; z-index:${windowAmmount*5}" id="window#${windowAmmount}">
+<div class="window" style="left:`+ windowAmmount * 2 + `vw; top:` + windowAmmount * 2 + `vw; z-index:${windowAmmount*5}; width:${w ? w : 50}vw; height:${h ? h : 25}vw;" id="window#${windowAmmount}">
 <!--the thing that is draggable-->
 
 <div class="header">

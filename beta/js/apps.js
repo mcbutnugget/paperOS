@@ -49,6 +49,7 @@ function openPOSH(){
 }
 
 
+createf
 
 
 function openFolders(location){
@@ -105,7 +106,14 @@ function openSettings(){
 
 
 
-
+function createFile(){
+    createWindow("new file",`
+    <div style=" position:absolute; top:0; background-color:rgb(35,35,35); width:100%; height:2.5vw; z-index:5;">
+    <input type="text"  style=" width:10vw; height:5vw; background-color:rgb(20,20,20); color:white; " id="name"/>
+    <button onClick="createObject(document.getElementById('name').value)"></button>
+    </div>
+    `,"../icons/logos/bookshelf.png", 15, 10);
+}
 
 
 
