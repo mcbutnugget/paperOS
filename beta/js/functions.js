@@ -1,7 +1,7 @@
 var bootloader = localStorage.getItem("computator");
 var computator = JSON.parse(bootloader);
 
-eval(PathToFile(computator,"p/paperOS_functions/functions.js"));
+eval(PathToFile(computator,"p/paperOS_appdat/functions.js"));
 
 function PathToFile(computator, path) {
   const pathElements = path.split("/");
