@@ -1,5 +1,5 @@
 
-.warn{
+#bodyNumberTwo>.warn{
   font-family: "Press Start 2P", sans-serif;
   color:rgb(255, 145, 0);
 }
@@ -23,7 +23,7 @@ text-decoration: none;
     line-height: 25px;
   }
 
-#container{
+  #bodyNumberTwo>#container{
   height:51vw;
   position: relative;
   overflow:hidden;
@@ -44,7 +44,7 @@ text-decoration: none;
 @font-face { 
   font-family: press-Start-2P; src: url('press-start-2P.otf'); 
 } 
-#input{
+#bodyNumberTwo>#input{
   position:absolute;
   background-color: rgba(57, 57, 57,0);
   border-width:0;
@@ -60,16 +60,16 @@ font-weight: bold;
   font-family: "Press Start 2P", sans-serif;
   color:rgb(0, 255, 0);
 }
-.error{
+#bodyNumberTwo>.error{
   font-family: "Press Start 2P", sans-serif;
   color:red;
 }
-.user_disp{
+#bodyNumberTwo>.user_disp{
   font-family: "Press Start 2P", sans-serif;
   color:rgb(0, 255, 0);
 
 }
-.plag{
+#bodyNumberTwo>.plag{
   font-family: "Press Start 2P", sans-serif;
   float:left;
   color:rgb(0,255,0);
@@ -82,7 +82,7 @@ font-weight: bold;
   background-color:rgb(0,255,0);
 }
 
-#controls{
+#bodyNumberTwo>#controls{
 position:absolute;
 top:1vw;
 right:2vw;
