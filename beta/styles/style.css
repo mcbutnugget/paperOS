@@ -193,6 +193,7 @@ img{
     width:97%;
 }
 #overlay{
+    backdrop-filter: blur(6px);
     position:absolute;
     width:100%;
     top:100%;
