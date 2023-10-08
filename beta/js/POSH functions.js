@@ -287,7 +287,8 @@ window.computator = [
         ["..",[]],
         ["backgrounds",[
           ["..",[]],
-          ["console_logo.png",readDisk("../icons/logos/console logo.png")]
+          ["console_logo.png",readDisk("../icons/logos/console logo.png")],
+          ["test.png",readDisk("../icons/logos/test.png")]
         ]]
       ]]
     ]]
