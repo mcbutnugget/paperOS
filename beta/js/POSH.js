@@ -163,7 +163,7 @@ write[file name] : <i>data</i> - writes to the contents of a file, should be use
           }else if(newCMD.startsWith("run ")){
             localStorage.setItem(folderName+"/"+(newCMD.split(" ",2)).pop(),PathToFile(computator,folderName+"/"+(newCMD.split(" ",2)).pop()));
           localStorage.setItem("code-to-run",folderName+"/"+(newCMD.split(" ",2)).pop());
-          openWindow("program",readDisk("../html/runner.html"));
+          createWindow("program",readDisk("../html/runner.html"));
 
         }else if(newCMD=="about"){
                         say('this site was made by mcbuttnugget, if you have questions, email me at<br><br>jmcastrommx@gmail.com');
