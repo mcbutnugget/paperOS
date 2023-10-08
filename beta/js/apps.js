@@ -1,9 +1,31 @@
 var scrollOpen = false;
 
 function openPoster(data) {
-    const encodedData = encodeBase64(data);
-    console.log(`data:image/png;base64,${encodedData}`);
-    createWindow("poster", `<img src="data:image/png;base64,${encodedData}" />`, "../icons/logos/poster.png");
+    if (data) {
+      const decoder = new TextDecoder();
+  
+      // Create a stream reader to read the Base64 data.
+      const reader = new FileReader();
+      reader.onload = function() {
+        // Decode the Base64 data in chunks.
+        for (const chunk of reader.result) {
+          const decodedChunk = decoder.decode(atob(chunk));
+  
+          // Render the decoded chunk.
+          const img = document.createElement("img");
+          img.src = "data:image/png;base64," + decodedChunk;
+  
+          // Append the rendered image to the document body.
+          document.body.appendChild(img);
+        }
+      };
+  
+      // Read the Base64 data.
+      reader.readAsText(data);
+    } else {
+      // Handle the case where the image data is empty.
+      console.error("Image data is empty.");
+    }
   }
 
 
