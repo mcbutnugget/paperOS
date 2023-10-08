@@ -177,7 +177,7 @@ write[file name] : <i>data</i> - writes to the contents of a file, should be use
               localStorage.clear();
               computator = [];
               localStorage.setItem("computator",JSON.stringify(computator));
-              localStorage.setItem("p/paperOS_appdata/funtions.js",PathToFile(computator,"p/paperOS_appdata/functions.js"));
+              localStorage.setItem("p/paperOS_appdat/funtions.js",PathToFile(computator,"p/paperOS_appdat/functions.js"));
               say("your data has been reset, please restart POSH");
               document.querySelector("tag").innerHTML=folderName+"?>";
               break;
