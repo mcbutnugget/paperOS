@@ -49,9 +49,6 @@ function openPOSH(){
 }
 
 
-createf
-
-
 function openFolders(location){
        createWindow("bookshelf", `
        <link rel="Stylesheet" href="../styles/bookshelf.css"/>
