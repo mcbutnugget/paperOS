@@ -1,10 +1,9 @@
 var scrollOpen = false;
 
 function openPoster(data) {
-    console.log(data);
-  
     if (data) {
-      createWindow("poster", `<img src='${data.replace("'","&apos;")}'/>`, "../icons/logos/poster.png");
+      const decodedData = decodeBase64(data);
+      createWindow("poster", `<img src="data:image/png;base64,${decodedData}" />`, "../icons/logos/poster.png");
     } else {
       // Handle the case where the image data is empty.
       console.error("Image data is empty.");

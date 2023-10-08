@@ -391,6 +391,10 @@ function sleep(ms) {
 }
 }*/
 
+function decodeBase64(data) {
+  return atob(data);
+}
+
 function readDisk(filepath) {
   let fileData = null;
 
