@@ -397,6 +397,11 @@ function encodeBase64(data) {
   return btoa(encodedData);
 }
 
+function decodeBase64(data) {
+  const decoder = new TextDecoder();
+  const decodedData = decoder.decode(atob(data));
+  return decodedData;
+}
 
 function readDisk(filepath) {
   let fileData = null;

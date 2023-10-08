@@ -1,13 +1,8 @@
 var scrollOpen = false;
 
 function openPoster(data) {
-    if (data) {
-      const decodedData = decodeBase64(data);
-      createWindow("poster", `<img src="data:image/png;base64,${decodedData}" />`, "../icons/logos/poster.png");
-    } else {
-      // Handle the case where the image data is empty.
-      console.error("Image data is empty.");
-    }
+    const encodedData = encodeBase64(data);
+    createWindow("poster", `<img src="data:image/png;base64,${encodedData}" />`, "../icons/logos/poster.png");
   }
 
 
