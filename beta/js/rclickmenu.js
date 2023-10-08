@@ -32,7 +32,9 @@ document.addEventListener("click", async function(e){
 })
 
 function createObject(name){
-             
+    $('#')        
+
+
     for(var i = 0; i<=folderDataRaw.length-1; i++){
         folderData[folderData.length] = folderDataRaw[i][0];
       }
@@ -58,7 +60,7 @@ function toDoOnClick(e){
     if(e.target==document.getElementById("listOfFiles")){
         console.log("true");
         menu.innerHTML=`
-            <button onClick='createFile()'>create file/folder</button>
+            <button onClick=''>create file/folder</button>
         `
     }else{
         console.error("false");
