@@ -198,7 +198,7 @@ img{
     top:100%;
     left:0;
     height:100%;
-    background-color:rgba(35, 35, 35, 0);
+    background-color:rgba(0, 0, 0, 0);
     transition:all 1s;
     z-index:9998;
 }
