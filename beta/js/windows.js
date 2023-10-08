@@ -28,7 +28,7 @@ function createWindow(title, contents, img, w, h) {
     if (img) {
         $('#open').append(`<button class="showWindow" id="`+windowAmmount+`"><img id="`+windowAmmount+`" src="` + img + `"/></button>`);
     } else {
-        $('#open').append(`<button class="showWindow" id="`+windowAmmount+`"><img id="`+windowAmmount+`" src="/paperos/icons/logos/defaultApplication.png"/></button>`);
+        $('#open').append(`<button class="showWindow" id="`+windowAmmount+`"><img id="`+windowAmmount+`" src="../icons/logos/defaultApplication.png"/></button>`);
     }
     windowData();
     windowAmmount++;
