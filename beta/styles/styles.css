@@ -1,139 +1,85 @@
-h1{
-    color:white;
+
+.warn{
     font-family: "Press Start 2P", sans-serif;
-    text-align: center;
-    
+    color:rgb(255, 145, 0);
   }
-  h1:hover{
-   cursor: url('data:image/x-icon;base64,AAACAAEAICACAAcABwAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJIAAADuAAAAKAAAACgAAAAoAAAAKAAAACgAAAAoAAAAKAAAACgAAAAoAAAAKAAAACgAAAAoAAAA7gAAAJIAAA//////////////////////////////////////////////////////////////////////////////////////Af///wH////H////x////8f////H////x////8f////H////x////8f////H////x////8f///8B////Af//8='), auto;
-  }
-  h2{
-    color:white;
-    font-family: "Press Start 2P", sans-serif;
-    text-align: center;
   
-  }
-  h2:hover{
-   cursor: url('data:image/x-icon;base64,AAACAAEAICACAAcABwAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJIAAADuAAAAKAAAACgAAAAoAAAAKAAAACgAAAAoAAAAKAAAACgAAAAoAAAAKAAAACgAAAAoAAAA7gAAAJIAAA//////////////////////////////////////////////////////////////////////////////////////Af///wH////H////x////8f////H////x////8f////H////x////8f////H////x////8f///8B////Af//8='), auto;
-  }
-  h3{
-    color:rgb(0, 247, 255);
-    font-family: "Press Start 2P", sans-serif;
-    text-align: center;
-    
-    
-  }
-  h3:hover{
-    background-color: blue;
-    color:cyan;
   
-  }
-  h5{
-  position:fixed;
-  right:0px;
-  top:0px;
-  font-size:10px;
-  color:rgb(0, 255, 0);
-  font-family: "Press Start 2P", sans-serif;
-  }
   a{
   text-decoration: none;
   }
-  a:hover{
-  cursor: url('data:image/x-icon;base64,AAACAAEAICACAAUAAQAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP4AAAD+AAAA/gAAAf8AAAH/AAAB/wAAA/+AAAf/gAAN/4AADf2AAAn0AAABJAAAASAAAAEAAAABAAAAAQAAAAAAAAA///////////////////////////////////////////////////////////////////////////8B///+AP///gD///4A///8AH///AB///wAf//4AD//8AA//+AAP//gAD//4AA//+AB///8Af///A////x////8f////H///8='), auto;
   
-  }
-  #code{
-    font-family: "Press Start 2P", sans-serif;
-    position:absolute;
-    width:98vw;
-    height:50vw;
-    background-color: rgba(0, 0, 0, 0);
-    border-width:0;
-    font-family: "Press Start 2P", sans-serif;
-    color:rgb(0, 255, 0);
-    border-color:rgb(0,255,0);
-    border-width: 2px;
-    outline: none;
-    overflow:scroll;
-    line-height:25px;
-  font-size: 1em;
-  font-weight: bold;
-    resize:none;
+  
+  
+    .numbers {
+      position: absolute;
+      left: 0;
+      top: 10;
+      width: 30px; 
+      padding: 5px;
+      color:rgb(0, 119, 255);
+      font-family: "Press Start 2P", sans-serif;
+      pointer-events: none;
+      line-height: 25px;
+    }
+  
+  #container{
+    height:51vw;
+    position: relative;
+    overflow:hidden;
   }
   ::-webkit-scrollbar {
     width: 0px;
   }
-  body{
+  
+  #body3{
+      position:absolute;
     background-color: black;
     overflow-x:hidden;
-    margin:0px;
+    overflow-y:scroll;
+    width:100%;
+    height:100%
   }
   
   @font-face { 
     font-family: press-Start-2P; src: url('press-start-2P.otf'); 
   } 
-  #user{
+  #input{
+    position:absolute;
     background-color: rgba(57, 57, 57,0);
     border-width:0;
     font-family: "Press Start 2P", sans-serif;
     color:rgb(0, 255, 0);
     outline: none;
-    display: inline-block;
     width:90vw;
-    overflow:visible;
+    overflow:scroll;
   font-size: 1em;
   font-weight: bold;
   }
   #name{
+    font-family: "Press Start 2P", sans-serif;
     color:rgb(0, 255, 0);
   }
   .error{
-    color:red;
-    display: inline-block;
-    margin:0px;
     font-family: "Press Start 2P", sans-serif;
+    color:red;
   }
   .user_disp{
-    color:rgb(0, 255, 0);
-    margin:0px;
-    display: inline-block;
     font-family: "Press Start 2P", sans-serif;
-  } 
-  pre{
-    margin:0px;
-    height:0px;
+    color:rgb(0, 255, 0);
+  
   }
   .plag{
     font-family: "Press Start 2P", sans-serif;
+    float:left;
     color:rgb(0,255,0);
-    display: inline-block;
   }
   
   
-  html {  cursor: url('data:image/x-icon;base64,AAACAAEAICACAAAAAAAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAABGAAAATAAAAHwAAAB4AAAAeAAAAH4AAAB+AAAAfAAAAHgAAABwAAAAYAAAAEAAAAAAAAAA//////////////////////////////////////////////////////////////////////////////////////////84////OP///xD///8B////Af///wP///8B////AH///wD///8B////A////wf///8P////H////z////8='), auto; }
+  
   ::selection{
     color:black;
     background-color:rgb(0,255,0);
-  }
-  
-  button{
-    position:absolute;
-    font-family: "Press Start 2P", sans-serif;
-    bottom:0px;
-    color:rgb(0,255,0);
-    border-color:rgb(0,255,0);
-    border-style:solid;
-    padding: 10px 10px;
-    position: relative;
-    width: auto;
-    z-index: 2;
-    background-color:rgba(0,0,0,0);
-  }
-  
-  button:active{
-  background-color:rgb(0,255,0);
-  color:black;
   }
   
   #controls{
