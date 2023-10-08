@@ -266,6 +266,7 @@ if(POSHl == true){
 }
 
   window.Key = PresentKeys();
+  runcoders();
 
 `;
 
