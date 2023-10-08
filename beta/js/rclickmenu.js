@@ -20,7 +20,7 @@ document.addEventListener("contextmenu",async function(e){
         menu.style.backdropFilter= "blur(6px)";
         menu.style.backgroundColor = "rgba(90, 90, 90, 0.8)";
 
-        toDoOnClick();
+        toDoOnClick(e);
     }
 });
 
@@ -54,7 +54,7 @@ function createObject(name){
 
 }
 
-function toDoOnClick(){
+function toDoOnClick(e){
     if(e.currentTarget==this.documentElement.getElementById("listOfFiles")){
         menu.innerHTML=`
             <button onClick='createFile()'>create file/folder</button>
