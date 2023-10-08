@@ -55,7 +55,7 @@ function createObject(name){
 }
 
 function toDoOnClick(e){
-    if(e.currentTarget==this.documentElement.getElementById("listOfFiles")){
+    if(e.currentTarget==document.getElementById("listOfFiles")){
         menu.innerHTML=`
             <button onClick='createFile()'>create file/folder</button>
         `
