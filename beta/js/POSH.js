@@ -177,7 +177,7 @@ write[file name] : <i>data</i> - writes to the contents of a file, should be use
               localStorage.clear();
               computator = [];
               localStorage.setItem("computator",JSON.stringify(computator));
-              localStorage.setItem("p/funtions.js",PathToFile(computator,"p/functions.js"));
+              localStorage.setItem("p/paperOS_appdata/funtions.js",PathToFile(computator,"p/paperOS_appdata/functions.js"));
               say("your data has been reset, please restart POSH");
               document.querySelector("tag").innerHTML=folderName+"?>";
               break;
@@ -197,7 +197,7 @@ write[file name] : <i>data</i> - writes to the contents of a file, should be use
           writeFile(computator,folderName+"/"+newCMD.split("[")[1].split("]")[0],newCMD.split(" : ").pop());
         }else if(newCMD=="update"){
           say("ok updating...");
-          writeFile(computator,"p/functions.js",functions_js)
+          writeFile(computator,"p/paperOS_appdat/functions.js",functions_js)
           say("done!");
         }else{
 
