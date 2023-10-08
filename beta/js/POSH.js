@@ -3,8 +3,8 @@
 $(() => {
   clear();
   if(PathToFile(computator,"p/data.incd").includes("welcome:true")){
-  $('#shellData').append(`<h4 class = 'user_disp'>welcome to POSH</h4>`);
-  $('#shellData').append(`<h4 class = 'user_disp'>type 'help' for a list of commands</h4>`);
+  $('#shellData').append(`<h4 class = 'user_disp1'>welcome to POSH</h4>`);
+  $('#shellData').append(`<h4 class = 'user_disp1'>type 'help' for a list of commands</h4>`);
   }else if(PathToFile(computator,"p/data.incd").includes("welcome:false")){
 
   }else{
@@ -22,16 +22,16 @@ $(() => {
       const newCMD = output;
       if (newCMD) {
        //says where you are in the folder tabs
-        $('#shellData').append(`<h4 class='user_disp'>${folderName}?>${newCMD}</h4>`);
+        $('#shellData').append(`<h4 class='user_disp1'>${folderName}?>${newCMD}</h4>`);
        if(newCMD=="where"){
 
-         $('#shellData').append(`<h4 class = 'user_disp'>${folderName}</h4>`);
+         $('#shellData').append(`<h4 class = 'user_disp1'>${folderName}</h4>`);
          //says what's inside of the folder you're in
          }else if(newCMD=="inside"||newCMD=="ls"||newCMD=="dir"){
           for(var i = 0; i<=folderDataRaw.length-1; i++){
             folderData[folderData.length] = folderDataRaw[i][0];
           }
-            $('#shellData').append(`<h4 class = 'user_disp'>${folderData.join("<br><br>")}</h4>`);
+            $('#shellData').append(`<h4 class = 'user_disp1'>${folderData.join("<br><br>")}</h4>`);
             folderData = [];
 
           //makes a file/folder in the folder your in
@@ -47,7 +47,7 @@ $(() => {
               }else{
                 createFolder(computator,folderName,(newCMD.split(" ",2)).pop());
               }
-            $('#shellData').append(`<h4 class = 'user_disp'>created!</h4>`);
+            $('#shellData').append(`<h4 class = 'user_disp1'>created!</h4>`);
           }else{
 
             $('#shellData').append(`<h4 class = 'error'>that file or folder all ready exists, type a different name</h4>`);
@@ -84,7 +84,7 @@ $(() => {
               }else{
                 deleteFolder(computator,folderName,newCMD.split(" ",2).pop());
               }
-            $('#shellData').append(`<h4 class = 'user_disp'>deleted!</h4>`);
+            $('#shellData').append(`<h4 class = 'user_disp1'>deleted!</h4>`);
           }else{
   
             $('#shellData').append(`<h4 class = 'error'>that file/folder doesn't exist</h4>`);
@@ -134,7 +134,7 @@ $(() => {
 
         }else if(newCMD=="help"){
 
-           $('#shellData').append(`<h4 class = 'user_disp'>
+           $('#shellData').append(`<h4 class = 'user_disp1'>
 help - displays this menu<br><br>
 del <i>file or folder name</i> - deletes a file or folder<br><br>
 setcolor <i>text or bg</i> <i>color</i>- sets the color of the bg or text<br><br>
@@ -153,7 +153,7 @@ write[file name] : <i>data</i> - writes to the contents of a file, should be use
           if(PathToFile(computator,folderName+"/"+(newCMD.split(" ",2)).pop())!=null&&newCMD!=".."){
           if(computator,folderName+"/"+(newCMD.split(" ",2)).pop()=="functions.js"){
           }
-            $('#shellData').append(`<h4 class = 'user_disp'>opening...</h4>`);
+            $('#shellData').append(`<h4 class = 'user_disp1'>opening...</h4>`);
             localStorage.setItem("location",folderName+"/"+(newCMD.split(" ",2)).pop());
             localStorage.setItem(folderName+"/"+newCMD.split(" ").pop(),PathToFile(computator,folderName+"/"+(newCMD.split(" ",2)).pop()));
             openStickynote(localStorage.getItem(localStorage.getItem("location")));
@@ -228,5 +228,5 @@ $(document).keydown(function(e) {
     }
 }); 
 function setText(){
-  document.getElementsByClassName("user_disp")[document.getElementsByClassName("user_disp").length-1].style.color=color;
+  document.getElementsByClassName("user_disp1")[document.getElementsByClassName("user_disp1").length-1].style.color=color;
 }

@@ -316,7 +316,7 @@ var folderDataRaw = PathToData(computator,folderName);
 var sets = [""];
 var object;
 var color = "rgb(0,255,0)";
-var i = document.getElementsByClassName("user_disp").length-1;
+var i = document.getElementsByClassName("user_disp1").length-1;
 var running = false;
 
 var dontwarn = false;
@@ -454,7 +454,7 @@ async function setColor(obj, col){
 }
 async function say(text){
 
-   $('#shellData').append(`<h4 class = 'user_disp'>${text.replace(/\\n/g,'<br>')}</h4>`);
+   $('#shellData').append(`<h4 class = 'user_disp1'>${text.replace(/\\n/g,'<br>')}</h4>`);
 }
 async function clear(){
    i=0;
