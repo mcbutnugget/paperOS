@@ -22,6 +22,10 @@ function openStickynote(data){
 `,"../icons/logos/stickynoteIcon.png");
 }
 
+function openPaperCLP(){
+    createWindow("paperCLIP",readDisk("../html/paperClip.html"),"../icons/logos/paperclip.png");
+}
+
 function openPOSH(){
     createWindow("POSH",`
     <div id="bodyNumberTwo">
