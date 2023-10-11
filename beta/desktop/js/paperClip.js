@@ -1,4 +1,7 @@
-async function search(){
+function search(){
     var search = document.getElementById("search");
-    document.getElementById("body4").innerHTML = "<iframe src= `data:text/html,"+readDisk(search.value)+"`/>";
+    var searchResults = await fetch(search.value);
+    var searchResultsHTML = await searchResults.text();
+
+    document.getElementById("body4").innerHTML = searchResultsHTML;
 }
