@@ -3,3 +3,8 @@ body{
     color:white;
     font-family:sans-serif;
 }
+#apps{
+    display:grid;
+    grid-template-rows: 10;
+    grid-template-columns: 5;
+}
