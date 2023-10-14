@@ -26,6 +26,14 @@ function openPaperCLP(){
     createWindow("paperCLIP",readDisk("../html/paperClip.html"),"../icons/logos/paperclip.png");
 }
 
+function time(){
+    const daTime = new Date();
+    const hours = daTime.getHours().toString().padStart(2, '0');
+    const minutes = daTime.getMinutes().toString().padStart(2, '0');
+
+    document.getElementById("time").innerHTML=`${hours}:${minutes}`;
+}
+
 function openPOSH(){
     createWindow("POSH",`
     <div id="bodyNumberTwo">

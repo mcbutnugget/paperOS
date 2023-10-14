@@ -1,4 +1,4 @@
-
+//i think im gonna experement with uploading files to paperOS
 
 
 async function load(){
