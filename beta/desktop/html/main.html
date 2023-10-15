@@ -20,8 +20,15 @@
 </head>
 <body><!--where all of the windows are-->
     <div id="loginPage">
-        <center>
-
+        <center  class="loginMenu" id="selectUser">
+            <div id="profileSelector"></div>
+        </center>
+        <center  class="loginMenu" id="createUser" style="display:none;">
+            <h1>welcome to paperOS</h1>
+            <tag>create password</tag><input type="password" id="password"/>
+            <tag>create username</tag><input type="text" id="username"/>
+        </center>
+        <center  class="loginMenu" id="selectedUser" style="display:none;">
             <div id="profile"><img src = "../icons/logos/defaultUserIcon.png" style="width:100%; height:100%;"/></div>
             <h1 id="user" style="background-color:#101010;color:white;border-radius: 20px; border-style:solid; width:fit-content; color:white; padding:10px;">username</h1>
             <h4 id="text">password</h4>
