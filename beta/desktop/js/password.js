@@ -33,10 +33,10 @@ async function loop(){
     for(var i = 0; i<=PathToData(computator,"p/main/users").length-1; i++){
         folderData[folderData.length] = PathToData(computator,"p/main/users")[i][0];
       }
-    if(Key["Enter"]&&folderData.length < 1){
+    if(Key["Enter"]&&folderData.length < 2){
         await NewUser(document.getElementById("username").value,document.getElementById("password").value);
     }
-    if(folderData.length > 1){
+    if(folderData.length > 2){
         document.getElementById("loginPage").style.height="0";
         pass.style.outlineColor = "rgb(0,255,0)";
     }
@@ -51,7 +51,7 @@ async function NewUser(username,pass){
     h5 = await hash(h4);
     createFolder(computator, "p/main/users",username);
     createFile(computator, "p/main/users/"+username,"userData.incd");
-    writeFile(computator, "p/main/users/"+username+"userData.incd",hash(h6)+"\nname:"+username);
+    writeFile(computator, "p/main/users/"+username+"/userData.incd",hash(h6)+"\nname:"+username);
 }
 
 function noUsers(){
@@ -70,4 +70,4 @@ function noUsers(){
     folderData = [];
 }
 
-setInterval(loop,1);
+setInterval(await loop,1);
