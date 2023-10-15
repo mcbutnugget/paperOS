@@ -72,4 +72,4 @@ function noUsers(){
     folderData = [];
 }
 
-setInterval(await loop,1);
+setInterval(loop,1);
