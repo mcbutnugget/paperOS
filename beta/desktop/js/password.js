@@ -62,5 +62,7 @@ function noUsers(){
     }
     folderData = [];
 }
-
-setInterval(loop,1);
+while(document.getElementById("loginPage").style.height!="0"){
+    loop()
+    await POSH.pause(1);
+}
