@@ -250,9 +250,6 @@ img{
     border-radius: 20px;
     outline-color:cyan;
 }
-.loginMenu{
-    position:absolute;
-}
 #text{
     bottom:10vw;
     left:50%;
