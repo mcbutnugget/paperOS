@@ -28,13 +28,13 @@ function detectPasswordFor(user){
     }
 }
 
-function loop(){
+async function loop(){
     noUsers();
     for(var i = 0; i<=PathToData(computator,"p/main/users").length-1; i++){
         folderData[folderData.length] = PathToData(computator,"p/main/users")[i][0];
       }
     if(Key["Enter"]&&folderData.length < 1){
-        NewUser(document.getElementById("username").value,document.getElementById("password").value);
+        await NewUser(document.getElementById("username").value,document.getElementById("password").value);
     }
     if(folderData.length > 1){
         document.getElementById("loginPage").style.height="0";
@@ -43,7 +43,7 @@ function loop(){
     folderData = [];
 }
 
-function NewUser(username,pass){
+async function NewUser(username,pass){
     h1 = await hash(pass);
     h2 = await hash(h1);
     h3 = await hash(h2);
