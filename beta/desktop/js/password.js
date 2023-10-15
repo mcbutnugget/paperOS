@@ -2,17 +2,10 @@ var pass;
 var user = document.getElementById("user");
 
 async function hash(string) {
-    // Convert the string to a byte array
-    var bytes = new TextEncoder().encode(string);
+    const bytes = new TextEncoder().encode(string);
   
-    // Create a new SHA-256 hash object
-    var hash = new crypto.subtle.Sha256();
-  
-    // Update the hash object with the byte array
-    hash.update(bytes);
-  
-    // Digest the hash object and return the hash as a string
-    return await hash.digest('hex');
+    const hash = await crypto.subtle.digest('SHA-256', bytes);
+    return Array.from(new Uint8Array(hash)).map(b => b.toString(16)).join('');
   }
   
 
