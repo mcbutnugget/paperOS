@@ -46,7 +46,7 @@ async function NewUser(username,pass){
     h5 = await hash(h4);
     createFolder(computator, "p/main/users",username);
     createFile(computator, "p/main/users/"+username,"userData.incd");
-    writeFile(computator, "p/main/users/"+username+"/userData.incd",hash(h6)+"\nname:"+username);
+    writeFile(computator, "p/main/users/"+username+"/userData.incd",hash(h5)+"\nname:"+username);
 }
 
 function noUsers(){
