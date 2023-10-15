@@ -29,11 +29,9 @@ async function loop(){
     if(Key["Enter"]&&folderData.length < 2){
         await NewUser(document.getElementById("username").value,document.getElementById("password").value);
         document.getElementById("loginPage").style.height="0";
-        pass.style.outlineColor = "rgb(0,255,0)";
     }
     if(folderData.length > 2){
         document.getElementById("loginPage").style.height="0";
-        pass.style.outlineColor = "rgb(0,255,0)";
     }
     folderData = [];
 }
