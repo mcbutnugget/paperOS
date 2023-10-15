@@ -1,7 +1,7 @@
 var pass;
 var user = document.getElementById("user");
 
-await function hash(string) {
+async function hash(string) {
     // Convert the string to a byte array
     var bytes = new TextEncoder().encode(string);
   
