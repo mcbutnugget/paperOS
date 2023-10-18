@@ -1,0 +1,13 @@
+#locat_ion{
+    overflow:hidden;
+    font-size:1.5vw;
+    margin:0;
+    position:absolute;
+    top:0;
+    right:0;
+    width:50%;
+    border-left-style:solid;
+    color:white;
+    border-color:rgb(45, 45, 45);
+    height:100%;
+}
