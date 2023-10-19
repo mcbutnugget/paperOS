@@ -12,7 +12,7 @@ iframe.onload = function () {
   iframeDocument.open();
 
   // Replace with the URL of the page you want to load
-  var url = search.value;
+  var url = "https://posh.glitch.me/";
 
   // Make a request to the PHP proxy
   var xhr = new XMLHttpRequest();
