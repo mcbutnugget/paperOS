@@ -16,7 +16,7 @@ iframe.onload = function () {
 
   // Make a request to the PHP proxy
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'php/proxy.php?url=' + encodeURIComponent(url), true);
+  xhr.open('GET', '../php/proxy.php?url=' + encodeURIComponent(url), true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var response = JSON.parse(xhr.responseText);
