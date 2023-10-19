@@ -1,3 +1,4 @@
+function search(){
 var search = document.getElementById("search");
 var iframe = document.createElement("iframe");
 iframe.style.width = "100%";
@@ -43,3 +44,4 @@ iframe.onload = function () {
   };
   xhr.send();
 };
+}
