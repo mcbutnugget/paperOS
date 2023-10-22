@@ -1,9 +1,13 @@
 <html>
-<?php
-$browser = new RBI.Browser();
+    <head>
+        
+    </head>
+    <body>
+        <?php
+            $browser = new RBI.Browser();
 
-$browser->load($_GET['url']);
+            $browser->load($_GET['url']);
 
-echo $browser->getData();
-?>
-</html>
+            echo $browser->getData();
+        ?>
+</body>
