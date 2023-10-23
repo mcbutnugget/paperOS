@@ -678,8 +678,6 @@ customElements.define('paperclp', class extends HTMLElement {
 
     this.iframe = document.createElement('iframe');
     this.iframe.src = this.getAttribute('src');
-    this.iframe.width = this.getAttribute('width');
-    this.iframe.height = this.getAttribute('height');
     this.iframe.frameBorder = false;
     this.appendChild(this.iframe);
 
