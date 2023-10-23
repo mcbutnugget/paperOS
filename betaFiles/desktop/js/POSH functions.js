@@ -678,9 +678,7 @@ customElements.define('paperclp', class extends HTMLElement {
 
     this.iframe = document.createElement('iframe');
     this.iframe.src = this.getAttribute('src');
-    this.iframe.style.width = this.getAttribute("width");
-    this.iframe.style.height = this.getAttribute("height");
-    
+    this.iframe.frameBorder = false;
     this.appendChild(this.iframe);
 
     this.browser = new RBI.Browser();
@@ -694,25 +692,3 @@ customElements.define('paperclp', class extends HTMLElement {
     });
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
