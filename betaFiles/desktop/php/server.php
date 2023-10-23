@@ -5,10 +5,16 @@
     <body>
         <?php
 
-            $browser = new RBI.Browser();
+$rbi = new RBI\Browser();
 
-            $browser->load($_GET['url']);
+$rbi->on('ready', function() use ($rbi) {
+  $rbi->load($_SERVER['REQUEST_URI']);
+});
 
-            echo $browser->getData();
+$rbi->on('data', function($data) use ($rbi) {
+  echo $data;
+});
+
+$rbi->run();
         ?>
 </body>
