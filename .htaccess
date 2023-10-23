@@ -4,3 +4,4 @@ RewriteRule ^beta$ gotoBeta.html [L]
 ErrorDocument 404 /ERRORS/404.html
 ErrorDocument 500 /ERRORS/500.html
 ErrorDocument 403 /ERRORS/403.html
+ProxyPass /php/server.php /betaFiles/desktop/php/server.php
