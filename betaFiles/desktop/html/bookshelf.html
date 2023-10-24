@@ -1,0 +1,30 @@
+
+<link rel="Stylesheet" href="../styles/bookshelf.css"/>
+<script src="../js/bookshelf.js" defer></script>
+<script>
+function goBack() {
+ var locationElement = document.getElementById("locat_ion");
+ var currentPath = locationElement.innerHTML;
+
+ // Split the current path by '/'
+ var pathParts = currentPath.split('/');
+
+ if (pathParts.length > 1) {
+     // If there are more than one parts, remove the last one and update the innerHTML
+     pathParts.pop(); // Remove the last part
+     locationElement.innerHTML = pathParts.join('/');
+ } else {
+     console.log("no");
+ }
+}
+</script>
+<div id="controlContainer" style=" position:absolute; top:0; background-color:rgb(35,35,35); width:100%; height:2.5vw; z-index:5;">
+<h3 id="locat_ion">${location}</h3>
+ <button id=".." class="FileButton" onClick = 'goBack(); load();'></button>
+</div>
+<div id="listOfFiles" style='background-color:rgb(55,55,55); color:white; width:100%; height:100%;'>
+<br><br>
+<div id="files">
+
+</div>
+</div>
