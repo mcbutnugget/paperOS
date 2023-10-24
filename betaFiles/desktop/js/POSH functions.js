@@ -280,6 +280,7 @@ window.computator = [
       ]]
     ]],
     ["data.incd",`welcome:true\nwarn:true\nalert:false\nstartPath:p/main\n`],
+    ["papdat.incd",`pap_start_data:true\npap_hello:true\npap_controller:false\npap_counter:false`],
     ["paperOS_appdat",[
       ["..",[]],
       ["functions.js",functions_js],
