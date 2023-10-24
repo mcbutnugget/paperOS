@@ -1,5 +1,4 @@
 //start of console
-
 $(() => {
   clear();
   if(PathToFile(computator,"p/data.incd").includes("welcome:true")){
@@ -20,13 +19,24 @@ $(() => {
       .replace(/'/g, '&#x27;')
       .replace(/\//g, '&#x2F;');
       const newCMD = output;
+      $('#shellData').append(`<h4 class='user_disp1'>${folderName}?>${newCMD}</h4>`);
       if (newCMD) {
-       //says where you are in the folder tabs
-        $('#shellData').append(`<h4 class='user_disp1'>${folderName}?>${newCMD}</h4>`);
        if(newCMD=="where"){
 
          $('#shellData').append(`<h4 class = 'user_disp1'>${folderName}</h4>`);
          //says what's inside of the folder you're in
+         }else if(newCMD == "what is the passcode" ||newCMD == "What is the passcode" ||newCMD == "what is the passcode." ||newCMD == "What is the passcode."){
+           say(`
+   _.-=-._     .-,\n 
+ .'       "-.,' / \n
+(          _.  <\n
+ \`=.____.="  \`._\\ \\n
+                   `);
+           setColor("text","red");
+         }else if(newCMD == "knight c4"){
+            $('#shellData').append(`<h4 class = 'wingdings'>under the bench</h4>`);
+         }else if(newCMD == "no i dont really feel better" || newCMD == "No I don't really feel better" |newCMD == "No i dont really feel better" |newCMD == "no I dont really feel better" |newCMD == "no i don't really feel better" |newCMD == "No I dont really feel better" | newCMD == "no I don't really feel better" |newCMD == "No i don't really feel better"){
+           location.href="https://docs.google.com/document/d/1ZL-NE4GcONgxBxICMSD_gc1-a7F5p7UY-8qst4MojNU/edit?usp=sharing";
          }else if(newCMD=="inside"||newCMD=="ls"||newCMD=="dir"){
           for(var i = 0; i<=folderDataRaw.length-1; i++){
             folderData[folderData.length] = folderDataRaw[i][0];
@@ -41,11 +51,54 @@ $(() => {
               folderData[folderData.length] = folderDataRaw[i][0];
             }
   
-            if(!folderData.includes((newCMD.split(" ",2)).pop())){
-              if((newCMD.split(" ",2)).pop().includes(".")){
-                createFile(computator,folderName,(newCMD.split(" ",2)).pop());
+            if(!folderData.includes(newCMD.split(" ").pop())){
+              if(newCMD.split(" ").pop().includes(".")){
+                createFile(computator,folderName,newCMD.split(" ").pop());
+                if(newCMD.split(" ").pop().endsWith(".pap")&&PathToFile(computator,"p/papdat.incd").includes("pap_start_data:true")){
+                  if(PathToFile(computator,"p/papdat.incd").includes("pap_hello:true")){
+                   writeFile(computator,folderName+"/"+newCMD.split(" ").pop(),'* add POSH;\n\nsay("hello world!");');
+                  }else if(PathToFile(computator,"p/papdat.incd").includes("pap_controller:true")){
+                     writeFile(computator,folderName+"/"+newCMD.split(" ").pop(),`
+* add POSH;
+
+set x = 20;
+set y = 20;
+
+
+if(Key['d']){
+set x = x + 1;
+}
+if(Key['a']){
+set x = x - 1;
+}
+if(Key['s']){
+set y = y + 1;
+}
+if(Key['w']){
+set y = y - 1;
+}
+clear;
+say("*",x,y);
+pause(50);
+goto(6);
+                               `);
+                  }else if(PathToFile(computator,"p/papdat.incd").includes("pap_counter:true")){
+                                                 writeFile(computator,folderName+"/"+newCMD.split(" ").pop(),`* add POSH;
+
+set time = 0;
+set time = time + 1;
+
+say(time,random(0,70),random(0,40));
+
+setColor("text","hsl("+random(0,359)+",100%,50%)");
+
+pause(1000);
+goto(4);
+                               `);                      
+                  }
+                }
               }else{
-                createFolder(computator,folderName,(newCMD.split(" ",2)).pop());
+                createFolder(computator,folderName,newCMD.split(" ").pop());
               }
             $('#shellData').append(`<h4 class = 'user_disp1'>created!</h4>`);
           }else{
@@ -57,14 +110,14 @@ $(() => {
           //goes into a folder that you made
 
       }else if(newCMD.startsWith("goto ")||newCMD.startsWith("cd ")){
-          var isNull = PathToData(computator,folderName+"/"+(newCMD.split(" ",2)).pop());
+          var isNull = PathToData(computator,folderName+"/"+newCMD.split(" ").pop());
           if(isNull!=null){
-            goto(folderName,(newCMD.split(" ",2)).pop());
+            goto(folderName,newCMD.split(" ").pop());
           folderDataRaw = PathToData(computator,folderName);
           document.querySelector("tag").innerHTML=folderName+"?>";
           //clears the console
           }
-        }else if(newCMD == "clear"){
+        }else if(newCMD == "clear"||newCMD == "cls"){
          clear();
         }else if(newCMD.split(" ", 1).pop()=="setcolor"){
             setColor(newCMD.split(" ", 2).pop(),newCMD.split(" ", 3).pop());
@@ -78,11 +131,11 @@ $(() => {
               folderData[folderData.length] = folderDataRaw[i][0];
             }
   
-            if(folderData.includes(newCMD.split(" ", 2).pop())){
-              if(newCMD.split(" ",2).pop().includes(".")){
-                deleteFile(computator,folderName,newCMD.split(" ",2).pop());
+            if(folderData.includes(newCMD.split(" ").pop())){
+              if(newCMD.split(" ").pop().includes(".")){
+                deleteFile(computator,folderName,newCMD.split(" ").pop());
               }else{
-                deleteFolder(computator,folderName,newCMD.split(" ",2).pop());
+                deleteFolder(computator,folderName,newCMD.split(" ").pop());
               }
             $('#shellData').append(`<h4 class = 'user_disp1'>deleted!</h4>`);
           }else{
@@ -95,19 +148,19 @@ $(() => {
   
           }else if(PathToFile(computator,"p/data.incd").includes("warn:true")){
             $('#shellData').append(`<h4 class = 'warn'>u sure?\n\nif you do this, your data WILL be lost\n\n press <u>y</u> to proceed, otherwise press <u>n</u></h4>`);
-            document.getElementById("input").value = "";
+            document.getElementById("user").value = "";
           document.querySelector("tag").innerHTML="";
           while(0==0){
-            if(Key['y']){
+            if(Key["y"]){
               for(var i = 0; i<=folderDataRaw.length-1; i++){
                 folderData[folderData.length] = folderDataRaw[i][0];
               }
     
               if(folderData.includes(newCMD.split(" ").pop())){
                 if(newCMD.split(" ").pop().includes(".")){
-                  deleteFile(computator,folderName,newCMD.split(" ", 2).pop());
+                  deleteFile(computator,folderName,newCMD.split(" ").pop());
                 }else{
-                  deleteFolder(computator,folderName,newCMD.split(" ", 2).pop());
+                  deleteFolder(computator,folderName,newCMD.split(" ").pop());
                 }
                 say("deleted! if you want this to not be here, just type 'goto ..' or 'cd ..',\n\nand edit data.incd to be 'warn:false' instead of 'warn:true'");
             }else{
@@ -119,7 +172,7 @@ $(() => {
             //goes into a folder that you made
               document.querySelector("tag").innerHTML=folderName+"?>";
               break;
-            }else if(Key['n']){
+            }else if(Key["n"]){
               say("ok");
               document.querySelector("tag").innerHTML=folderName+"?>";
               break;
@@ -134,7 +187,7 @@ $(() => {
 
         }else if(newCMD=="help"){
 
-           $('#shellData').append(`<h4 class = 'user_disp1'>
+           $('#shellData').append(`<h4 class = 'user_disp1'>tutorial - opens the help for .pap files<br><br>
 help - displays this menu<br><br>
 del <i>file or folder name</i> - deletes a file or folder<br><br>
 setcolor <i>text or bg</i> <i>color</i>- sets the color of the bg or text<br><br>
@@ -150,35 +203,36 @@ seeIn <i>file name</i> - see's the contents of a file, should be used when stick
 write[file name] : <i>data</i> - writes to the contents of a file, should be used when stickynote\nbreaks
            </h4>`);
         }else if(newCMD.startsWith("sn ")){
-          if(PathToFile(computator,folderName+"/"+(newCMD.split(" ",2)).pop())!=null&&newCMD!=".."){
-          if(computator,folderName+"/"+(newCMD.split(" ",2)).pop()=="functions.js"){
-          }
+          if(PathToFile(computator,folderName+"/"+newCMD.split(" ").pop())!=null&&!newCMD.includes("..")){
             $('#shellData').append(`<h4 class = 'user_disp1'>opening...</h4>`);
-            localStorage.setItem("location",folderName+"/"+(newCMD.split(" ",2)).pop());
-            localStorage.setItem(folderName+"/"+newCMD.split(" ").pop(),PathToFile(computator,folderName+"/"+(newCMD.split(" ",2)).pop()));
-            openStickynote(localStorage.getItem(localStorage.getItem("location")));
+            localStorage.setItem("location",folderName+"/"+newCMD.split(" ").pop());
+            localStorage.setItem(folderName+"/"+newCMD.split(" ").pop(),PathToFile(computator,folderName+"/"+newCMD.split(" ").pop()));
+            sn();
           }else{
             $('#shellData').append(`<h4 class = 'error'>there is nothing there or that is a folder,\n\nif you want to go into a folder, type 'goto 'foldername</h4>`);
           }
           }else if(newCMD.startsWith("run ")){
-            localStorage.setItem(folderName+"/"+(newCMD.split(" ",2)).pop(),PathToFile(computator,folderName+"/"+(newCMD.split(" ",2)).pop()));
-          localStorage.setItem("code-to-run",folderName+"/"+(newCMD.split(" ",2)).pop());
-          createWindow("program",readDisk("../html/runner.html"));
+            localStorage.setItem(folderName+"/"+newCMD.split(" ").pop(),PathToFile(computator,folderName+"/"+newCMD.split(" ").pop()));
+          localStorage.setItem("code-to-run",folderName+"/"+newCMD.split(" ").pop());
+          run();
 
+        }else if(newCMD=="tutorial"){
+          location.href="tutorial/";
         }else if(newCMD=="about"){
                         say('this site was made by mcbuttnugget, if you have questions, email me at<br><br>jmcastrommx@gmail.com');
         }else if(newCMD=="powerwash"){
           clear();
           $('#shellData').append(`<h4 class = 'warn'>are you sure?<br><br>all of you data will be forever lost to time<br><br>press <u>N</u> to not, otherwise, press <u>y</u></h4>`);
-          document.getElementById("input").value = "";
+          document.getElementById("user").value = "";
           document.querySelector("tag").innerHTML="";
           while(0==0){
             if(Key['y']){
               localStorage.clear();
               computator = [];
               localStorage.setItem("computator",JSON.stringify(computator));
-              localStorage.setItem("p/paperOS_appdat/funtions.js",PathToFile(computator,"p/paperOS_appdat/functions.js"));
-              say("your data has been reset, please restart POSH");
+              localStorage.setItem("p/funtions.js",PathToFile(computator,"p/functions.js"));
+              say("your data has been reset, restarting now...");
+              location.reload();
               document.querySelector("tag").innerHTML=folderName+"?>";
               break;
             }else if(Key['n']){
@@ -197,17 +251,17 @@ write[file name] : <i>data</i> - writes to the contents of a file, should be use
           writeFile(computator,folderName+"/"+newCMD.split("[")[1].split("]")[0],newCMD.split(" : ").pop());
         }else if(newCMD=="update"){
           say("ok updating...");
-          writeFile(computator,"p/paperOS_appdat/functions.js",functions_js)
+          writeFile(computator,"p/functions.js",functions_js);
           say("done!");
         }else{
 
            $('#shellData').append(`<h4 class = 'error'>idk what that is</h4>`);
       
          }
-
-
-        document.getElementById("input").value = "";
       }
+      document.getElementById("user").value = "";
+      await POSH.pause(1);
+      scrollToBottom("plag");
     }
   });
 });

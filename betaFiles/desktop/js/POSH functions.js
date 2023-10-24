@@ -392,7 +392,12 @@ function sleep(ms) {
   }
 }
 }*/
-
+function run(){
+  createWindow("program",readDisk("../html/runner.html"));
+}
+function sn(){
+  openStickynote(localStorage.getItem(localStorage.getItem("location")));
+}
 function encodeBase64(data) {
   const encoder = new TextEncoder();
   const encodedData = encoder.encode(data);
