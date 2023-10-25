@@ -1,29 +1,49 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <title>paper OS - v1.0</title>
-    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////APz8/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIiIiIgAAAAAAAAAAAAAAIiIiIgAAAAAiIiIiAAAAACAgACIAAAAAICIgIgAAAAAgIAAiAAAAACAgIiIAAAAAICAAIgAAAAAgIiIiAAAAACAQACIAAAAAIBAQIgAAAAAgEAAiAAAAICIiIiIAAAAAAAAAAAAADAAwAAwAMAAMADAADADwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAAA8AAAAPAAAADwAA" rel="icon" type="image/x-icon" />
-  </head>
-  <body>
-    <h1>
-      <img
-        src="https://cdn.glitch.global/bcd81597-8b94-49e2-aee2-81079e0ec671/paper%20OS%20logo.png?v=1670134307089"
-        alt="paperOS_Logo"
-        id="paperos_log"
-      />
-      paperOS login
-    </h1>
-    <h1 id="WC">this version of paperOS is outdated! for the latest version, go to paperos.glitch.me/beta.</h1>
-    <center>
+<html lang="en">
+  
+<head>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////APz8/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgIiIiIgAAAAAAAAAAAAAAIiIiIgAAAAAiIiIiAAAAACAgACIAAAAAICIgIgAAAAAgIAAiAAAAACAgIiIAAAAAICAAIgAAAAAgIiIiAAAAACAQACIAAAAAIBAQIgAAAAAgEAAiAAAAICIiIiIAAAAAAAAAAAAADAAwAAwAMAAMADAADADwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAAA8AAAAPAAAADwAA" rel="icon" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paperOS</title>
+    <link rel="Stylesheet" href="styles/style.css"/>
+    <script src="https://posh.glitch.me/libraries/library.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <button id="newButton" onclick='location.href="/gotoBeta.html"'>
-      go to new paperOS
-    </button>
-        <button onclick='location.href="/main.html"'>
-      proceed to old paperOS
-    </button>
-          
+    <script src="js/POSH functions.js"></script>
+    <script src="js/windows.js" defer></script>
+    <script src="js/apps.js" defer></script>
+    <script src="js/password.js" defer></script>
+    <script src="js/rclickmenu.js" defer></script>
+</head>
+<body><!--where all of the windows are-->
+    <div id="loginPage">
+        <center  class="loginMenu" id="selectedUser">
+            <div id="profile"><img src = "../icons/logos/defaultUserIcon.png" style="width:100%; height:100%;"/></div>
+            <h1 id="user" style="background-color:#101010;color:white;border-radius: 20px; border-style:solid; width:fit-content; color:white; padding:10px;">username</h1>
+            <h4 id="text">password</h4>
+            <input type="password" id="password"/>
     </center>
-  </body>
+    </div>
+    <div id="rclickmenu">
+
+    </div>
+    <div id="desk">
+
+    </div>
+    <div id="overlay">
+        <button class="overlayButton" onclick = "openPOSH(); Scroll()"><img src="icons/logos/console logo.png">POSH</button>
+        <button class="overlayButton" onclick="openFolders('p/main'); Scroll()"><img src="icons/logos/bookshelf.png">book shelf</button>
+        <button class="overlayButton"><img src="icons/logos/settings gear icon.png">settings</button>
+        <button class="overlayButton" onclick="openPaperCLP(); Scroll()"><img src="icons/logos/paperclip.png">paper Clip</button>
+    </div>
+    <!--the bar at the bottom of the screen-->
+    <div id="ruler">
+        <center id="open"></center>
+        <button onclick='Scroll()'><img src="icons/logos/paper OS logo.png" class="logo"></button>
+        <button onclick=""><p id="time"></p></button>
+    </div>
+</body>
 </html>

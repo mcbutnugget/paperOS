@@ -1,1 +1,0 @@
-# LAMP Proof of Concept
