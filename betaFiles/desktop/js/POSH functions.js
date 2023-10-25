@@ -564,7 +564,7 @@ const scrollToBottom = (id) => {
   const element = document.getElementById(id);
   element.scrollTop = element.scrollHeight;
 }
-
+ 
 function deleteFile(computator, path, fileName) {
   const pathElements = path.split("/");
   let currentLocation = computator;
