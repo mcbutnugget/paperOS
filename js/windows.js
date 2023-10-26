@@ -8,9 +8,9 @@ function createWindow(title, contents, img, w, h) {
 <div class="header">
     `+ title + `
 </div>
-<button class="windowButton minimizeButton"><img class="controlButtons" src="../icons/logos/windowIcons/minimizeIcon.png"/></button>
-<button class="windowButton fullscreenButton"><img class="controlButtons" src="../icons/logos/windowIcons/FullscreenIcon.png"/></button>
-<button class="windowButton closeButton"><img class="controlButtons" src="../icons/logos/windowIcons/closeIcon.png"/></button>
+<button class="windowButton minimizeButton"><img class="controlButtons" src="icons/logos/windowIcons/minimizeIcon.png"/></button>
+<button class="windowButton fullscreenButton"><img class="controlButtons" src="icons/logos/windowIcons/FullscreenIcon.png"/></button>
+<button class="windowButton closeButton"><img class="controlButtons" src="icons/logos/windowIcons/closeIcon.png"/></button>
 <!--contents of the window-->
 <div class="contents">
 `+ contents + `
@@ -28,7 +28,7 @@ function createWindow(title, contents, img, w, h) {
     if (img) {
         $('#open').append(`<button class="showWindow" id="`+windowAmmount+`"><img id="`+windowAmmount+`" src="` + img + `"/></button>`);
     } else {
-        $('#open').append(`<button class="showWindow" id="`+windowAmmount+`"><img id="`+windowAmmount+`" src="../icons/logos/defaultApplication.png"/></button>`);
+        $('#open').append(`<button class="showWindow" id="`+windowAmmount+`"><img id="`+windowAmmount+`" src="icons/logos/defaultApplication.png"/></button>`);
     }
     windowData();
     windowAmmount++;

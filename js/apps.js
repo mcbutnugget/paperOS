@@ -3,18 +3,18 @@ var scrollOpen = false;
 function openPoster(data) {
     const encodedData = base64.decode(data);
     console.log(`data:image/png;base64,${encodedData}`);
-    createWindow("poster", `<img src="data:image/png;base64,${encodedData}" />`, "../icons/logos/poster.png");
+    createWindow("poster", `<img src="data:image/png;base64,${encodedData}" />`, "icons/logos/poster.png");
   }
 
 
 
 
 function openStickynote(data){
-    createWindow("stickynote",readDisk("../html/stickynote.html"),"../icons/logos/stickynoteIcon.png");
+    createWindow("stickynote",readDisk("html/stickynote.html"),"icons/logos/stickynoteIcon.png");
 }
 
 function openPaperCLP(){
-    createWindow("paperCLIP",readDisk("../html/paperClip.html"),"../icons/logos/paperclip.png");
+    createWindow("paperCLIP",readDisk("html/paperClip.html"),"icons/logos/paperclip.png");
 }
 
 function time(){
@@ -26,12 +26,12 @@ function time(){
 }
 
 function openPOSH(){
-    createWindow("POSH",readDisk("../html/POSH.html"),"../icons/logos/console logo.png")
+    createWindow("POSH",readDisk("html/POSH.html"),"icons/logos/console logo.png")
 }
 
 
 function openFolders(location){
-       createWindow("bookshelf",readDisk("bookshelf.html") ,"../icons/logos/bookshelf.png");
+       createWindow("bookshelf",readDisk("bookshelf.html") ,"icons/logos/bookshelf.png");
 }
 
 function openSettings(){
