@@ -1,4 +1,0 @@
-{
-  "install": "echo 'starting paperOS...'",
-  "start": "bash lamp-start.sh"
-}
