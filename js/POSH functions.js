@@ -285,12 +285,12 @@ window.computator = [
       ["..",[]],
       ["functions.js",functions_js],
       ["stickynote.js",stickynote_js],
-      ["icons",[
+      ["images",[
         ["..",[]],
         ["backgrounds",[
           ["..",[]],
-          ["console_logo.png",readDisk("../icons/logos/console logo.png")],
-          ["test.png",readDisk("../icons/logos/test.png")]
+          ["console_logo.png",readDisk("../images/logos/console logo.png")],
+          ["test.png",readDisk("../images/logos/test.png")]
         ]]
       ]]
     ]]

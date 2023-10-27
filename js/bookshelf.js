@@ -6,10 +6,10 @@ async function load(){
     document.getElementById("files").innerHTML = "";
     document.getElementById("..").innerHTML = "";
 if(_location!="p"){
-    document.getElementById("..").innerHTML= `<img src='../icons/logos/windowIcons/arrowActive.png'/>`;
+    document.getElementById("..").innerHTML= `<img src='../images/logos/windowIcons/arrowActive.png'/>`;
 }else{
 
-    document.getElementById("..").innerHTML = "<img src='../icons/logos/windowIcons/arrowUnactive.png'/>";
+    document.getElementById("..").innerHTML = "<img src='../images/logos/windowIcons/arrowUnactive.png'/>";
 }
 
 
